@@ -2,7 +2,7 @@ package lesson_002;
 
 import java.util.Arrays;
 
-public class homeWorkTwoPartTwo {
+public class HomeWorkTwoPartTwo {
 
     public static void main(String[] args) {
 
