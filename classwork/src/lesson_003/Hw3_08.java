@@ -1,17 +1,14 @@
 package lesson_003;
 
+import java.util.Arrays;
 public class Hw3_08 {
-
     public static void main(String[] args) {
 
         // Створіть масив, що містить 10 перших непарних чисел.
         // Виведіть елементи масиву на консоль в один рядок, розділяючи комою.
 
-
-
         int m = 10;
         int[] mass = new int[m];
-
         int x = 1;
         for (int i = 0; i < mass.length; i++) {
             mass[i] = x;
@@ -27,7 +24,5 @@ public class Hw3_08 {
                 System.out.print(mass[i] + ", ");
             }
         }
-
-        System.out.println();
     }
 }

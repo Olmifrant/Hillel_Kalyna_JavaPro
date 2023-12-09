@@ -1,12 +1,12 @@
 package lesson_003;
 
-public class Hw3_11 {
+import java.util.Arrays;
 
+public class Hw3_11 {
     public static void main(String[] args) {
 
         //Поміняти максимальний і найменший елементи масиву місцями.
         // Приклад: дано масив {4, -5, 0, 6, 8}. Після заміни виглядатиме {4, 8, 0, 6, -5}.
-
 
         System.out.println();
         int[] mass = new int[12];
@@ -16,22 +16,11 @@ public class Hw3_11 {
         }
 
         System.out.println("Содержимое массива ");
-
-        for (int j = 0; j < mass.length; j++) {
-            if (j == mass.length - 1) {
-                System.out.print(mass[j]);
-            } else {
-                System.out.print(mass[j] + ", ");
-            }
-        }
-
-        System.out.println();
+        OutputMass(mass);
 
         int maxElement = mass[0];
         int minElement = mass[0];
-
         for (int i = 0; i < mass.length; i++) {
-
             if (mass[i] > maxElement) {
                 maxElement = mass[i];
             }
@@ -39,7 +28,6 @@ public class Hw3_11 {
                 minElement = mass[i];
             }
         }
-
         for (int i = 0; i < mass.length; i++) {
             if (mass[i] == maxElement) {
                 mass[i] = minElement;
@@ -50,17 +38,12 @@ public class Hw3_11 {
 
         System.out.println();
         System.out.println("Содержимое массива после замены ");
+        OutputMass(mass);
+    }
 
-        for (int j = 0; j < mass.length; j++) {
-            if (j == mass.length - 1) {
-                System.out.print(mass[j]);
-            } else {
-                System.out.print(mass[j] + ", ");
+    public static void OutputMass(int[] mass) {
 
-            }
-        }
-        System.out.println();
-
-
+        String masss = Arrays.toString(mass);
+        System.out.println(String.join(",", masss));
     }
 }
