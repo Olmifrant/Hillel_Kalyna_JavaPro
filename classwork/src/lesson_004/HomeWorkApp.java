@@ -70,8 +70,9 @@ public class HomeWorkApp {
         int sum = a + b;
         if (sum > 10 && sum < 20){
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public static void checkingNumber(int a){
@@ -79,8 +80,9 @@ public class HomeWorkApp {
         System.out.println("Задание 7");
         if (a >= 0){
             System.out.println("Число " + a + " положительное");
+        } else {
+            System.out.println("Число " + a + " отрицательное");
         }
-        else System.out.println("Число " + a + " отрицательное");
     }
 
     public static boolean  checkNum (int a) {
@@ -89,8 +91,9 @@ public class HomeWorkApp {
         System.out.println("вывод результата не предусмотрен");
         if (a < 0){
             return true;
+        }else {
+            return false;
         }
-        return false;
     }
 
     public static void stringAndNumber(String str, int a){
@@ -107,7 +110,9 @@ public class HomeWorkApp {
         if (!(year % 4 == 0) || ((year % 100 == 0) && !(year % 400 == 0))){
             System.out.println(year + " г. не високосный");
         }
-        else System.out.println(year + " г. високосный");
+        else{
+            System.out.println(year + " г. високосный");
+        }
     }
 
 }
