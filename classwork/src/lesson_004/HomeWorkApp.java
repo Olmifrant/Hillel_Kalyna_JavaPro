@@ -1,21 +1,19 @@
 package lesson_004;
-
 public class HomeWorkApp {
-
     public static void main(String[] args) {
 
-        PrintThreeWords();
-        CheckSumSign();
-        PrintColor();
-        CompareNumbers();
-        NumericRange(5,10);
-        CheckingNumber(52);
-        CheckNum(77);
-        StringAndNumber("Какой чудесный день",5);
-        LeapYear(2024);
+        printThreeWords();
+        checkSumSign();
+        printColor();
+        compareNumbers();
+        numericRange(5,10);
+        checkingNumber(52);
+        checkNum(77);
+        stringAndNumber("Какой чудесный день",5);
+        leapYear(2024);
     }
 
-    public static void PrintThreeWords() {
+    public static void printThreeWords() {
 
         System.out.println("Задание 1 - 2");
         System.out.println("Orange");
@@ -23,7 +21,7 @@ public class HomeWorkApp {
         System.out.println("Apple");
     }
 
-    public static void CheckSumSign() {
+    public static void checkSumSign() {
 
         System.out.println("Задание 3");
         int a = -5;
@@ -36,23 +34,23 @@ public class HomeWorkApp {
         }
     }
 
-    public static void PrintColor() {
+    public static void printColor() {
 
         System.out.println("Задание 4");
         int value = 100;
 
         if (value <= 0) {
             System.out.println("Красный");
-        }
-        if (value > 0 && value <= 100) {
-            System.out.println("Жeлтый");
-        }
-        if (value > 100) {
-            System.out.println("Зеленый");
+        }else {
+            if (value > 0 && value <= 100) {
+                System.out.println("Жeлтый");
+            } else {
+                System.out.println("Зеленый");
+            }
         }
     }
 
-    public static void CompareNumbers(){
+    public static void compareNumbers(){
 
         System.out.println("Задание 5");
         int a = 4;
@@ -65,31 +63,37 @@ public class HomeWorkApp {
         }
     }
 
-    public static boolean NumericRange(int a , int b){
+    public static boolean numericRange(int a , int b){
 
         System.out.println("Задание 6");
         System.out.println("вывод результата не предусмотрен");
         int sum = a + b;
-        if (sum > 10 && sum < 20) return true;
+        if (sum > 10 && sum < 20){
+            return true;
+        }
         else return false;
     }
 
-    public static void CheckingNumber(int a){
+    public static void checkingNumber(int a){
 
         System.out.println("Задание 7");
-        if (a >= 0) System.out.println("Число " + a + " положительное");
+        if (a >= 0){
+            System.out.println("Число " + a + " положительное");
+        }
         else System.out.println("Число " + a + " отрицательное");
     }
 
-    public static boolean  CheckNum (int a) {
+    public static boolean  checkNum (int a) {
 
         System.out.println("Задание 8");
         System.out.println("вывод результата не предусмотрен");
-        if (a < 0) return true;
+        if (a < 0){
+            return true;
+        }
         return false;
     }
 
-    public static void StringAndNumber(String str, int a){
+    public static void stringAndNumber(String str, int a){
 
         System.out.println("Задание 9");
         for (int i = 0; i <a ; i++) {
@@ -97,11 +101,12 @@ public class HomeWorkApp {
         }
     }
 
-    public static void LeapYear (int year){
+    public static void leapYear (int year){
 
         System.out.println("Задание 10");
-        if (!(year % 4 == 0) || ((year % 100 == 0) && !(year % 400 == 0)))
+        if (!(year % 4 == 0) || ((year % 100 == 0) && !(year % 400 == 0))){
             System.out.println(year + " г. не високосный");
+        }
         else System.out.println(year + " г. високосный");
     }
 
