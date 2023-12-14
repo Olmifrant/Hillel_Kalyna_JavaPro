@@ -37,16 +37,14 @@ public class HomeWorkApp {
     public static void printColor() {
 
         System.out.println("Задание 4");
-        int value = 100;
+        int value = 1000;
 
         if (value <= 0) {
             System.out.println("Красный");
-        }else {
-            if (value > 0 && value <= 100) {
-                System.out.println("Жeлтый");
-            } else {
-                System.out.println("Зеленый");
-            }
+        } else if (value > 0 && value <= 100) {
+            System.out.println("Жeлтый");
+        } else {
+            System.out.println("Зеленый");
         }
     }
 
