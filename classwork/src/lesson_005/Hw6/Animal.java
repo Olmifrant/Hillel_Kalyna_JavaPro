@@ -8,11 +8,7 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public abstract void run(String name);
-
     public abstract void run(int run);
-
-    public abstract void swim(String name);
 
     public abstract void swim(int swim);
 }

@@ -10,9 +10,7 @@ public class Dog extends Animal {
         super(name);
         dogCount++;
     }
-    @Override
-    public void run(String name) {
-    }
+
     public static int getDogCount() {
         return dogCount;
     }
@@ -26,10 +24,6 @@ public class Dog extends Animal {
             System.out.println("Пес " + name + " хотел пробежать " +
                     run + " метров но не смог потому что у собак ограничение " + limitRun + " метров");
         }
-    }
-
-    @Override
-    public void swim(String name) {
     }
 
     @Override

@@ -10,9 +10,6 @@ public class Cat extends Animal {
         catCount++;
     }
 
-    @Override
-    public void run(String name) {
-    }
 
     public static int getCatCount() {
         return catCount;
@@ -28,9 +25,6 @@ public class Cat extends Animal {
         }
     }
 
-    @Override
-    public void swim(String name) {
-    }
 
     @Override
     public void swim (int swim) {
