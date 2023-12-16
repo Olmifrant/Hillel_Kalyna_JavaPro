@@ -1,7 +1,5 @@
 package lesson_005.Hw6;
 
-import java.util.concurrent.Callable;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -11,7 +9,7 @@ public class Main {
         Cat cat1 = new Cat ("Вискас");
         Cat cat2 = new Cat ("Беляш");
         Cat cat3 = new Cat ("Шустрый");
-        Cat cat4 = new Cat("Макс");
+        Cat cat4 = new Cat ("Макс");
 
         cat1.run(410);
         cat1.swim(10);
@@ -22,9 +20,9 @@ public class Main {
         cat4.run(400);
         cat4.swim(40);
 
-        Dog dog1 = new Dog("Тузик");
-        Dog dog2 = new Dog("Джек");
-        Dog dog3 = new Dog("Рич");
+        Dog dog1 = new Dog ("Тузик");
+        Dog dog2 = new Dog ("Джек");
+        Dog dog3 = new Dog ("Рич");
 
         dog1.run(500);
         dog1.swim(10);
@@ -33,7 +31,6 @@ public class Main {
         dog3.run(600);
         dog3.swim(50);
 
-        System.out.println();
         System.out.println("Всего участвовало " + Cat.getCatCount() + " котов");
         System.out.println("Всего участвовало " + Dog.getDogCount() + " собак");
         System.out.println("Общее количество животных " + (Cat.getCatCount() + Dog.getDogCount()));

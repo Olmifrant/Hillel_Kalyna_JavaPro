@@ -29,6 +29,4 @@ public class Car {
         System.out.println("запуск топливной системы");
     }
 
-
-
 }

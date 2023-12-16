@@ -10,7 +10,6 @@ public class Cat extends Animal {
         catCount++;
     }
 
-
     public static int getCatCount() {
         return catCount;
     }
@@ -24,7 +23,6 @@ public class Cat extends Animal {
                     run + " метров но не смог потому что у котов ограничение " + limitRun + " метров");
         }
     }
-
 
     @Override
     public void swim (int swim) {
