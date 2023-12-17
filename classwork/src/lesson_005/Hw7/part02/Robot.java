@@ -23,5 +23,4 @@ public class Robot extends Team {
                 + " метров поскольку может прыгнуть лишь на "
                 + getMaxJump() + " и  больше прыгать не будет");
     }
-
 }

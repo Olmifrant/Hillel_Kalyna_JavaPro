@@ -23,4 +23,5 @@ public class Human extends Team {
         } else System.out.println("Человек " + getName() + " не смог перепрыгнуть препятствие высотой " + wall.getHeight()
                     + " метров поскольку может прыгнуть лишь на " + getMaxJump() +" и  больше прыгать не будет");
     }
+
 }

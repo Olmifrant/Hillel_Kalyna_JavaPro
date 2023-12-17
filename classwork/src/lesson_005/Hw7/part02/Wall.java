@@ -2,6 +2,7 @@ package lesson_005.Hw7.part02;
 
 public class Wall {
 
+
     private int Height;
 
     public Wall(int height) {

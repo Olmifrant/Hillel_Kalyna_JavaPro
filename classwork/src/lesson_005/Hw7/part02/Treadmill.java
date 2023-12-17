@@ -2,6 +2,7 @@ package lesson_005.Hw7.part02;
 
 public class Treadmill {
 
+
     private int range;
 
     public Treadmill(int range) {
@@ -14,5 +15,4 @@ public class Treadmill {
 
     public void setRange(int range) { this.range = range; }
 }
-
 

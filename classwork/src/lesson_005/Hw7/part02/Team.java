@@ -2,6 +2,7 @@ package lesson_005.Hw7.part02;
 
 public abstract class Team {
 
+
     private String name;
     private int maxRange;
     private int maxJump;
