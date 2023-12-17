@@ -1,4 +1,4 @@
-package lesson_005.Hw7;
+package lesson_005.Hw7.part01;
 
 public class Main {
 
@@ -19,14 +19,14 @@ public class Main {
                 System.out.println("Площадь круга: " + areaCircle);
             }else if(i == 1){
                 areaTriangle = figures[i].areaTriangle();
-                System.out.println("Площадь  треугольника: " + areaTriangle);
+                System.out.println("Площадь треугольника: " + areaTriangle);
             }else if(i == 2){
                 areaSquare = figures[i].areaSquare();
-                System.out.println("Площадь  квадрата : " + areaSquare);
+                System.out.println("Площадь квадрата: " + areaSquare);
 
             }else if(i == 3){
                 double result = areaCircle + areaTriangle + areaSquare;
-                System.out.println("Общая площадь: " + result);
+                System.out.println("Общая площадь фигур: " + result);
             }
         }
 

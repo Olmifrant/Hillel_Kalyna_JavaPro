@@ -1,4 +1,4 @@
-package lesson_005.Hw7;
+package lesson_005.Hw7.part01;
 
 public interface AreaFigures {
 
