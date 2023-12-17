@@ -22,7 +22,8 @@ public class Main {
         int Stage;
         do {
             for ( Stage = 1; Stage <=4 ; Stage++) {
-                System.out.println("\n" + Stage + " этап начат" );
+                System.out.println("\n" + Stage + " этап" );
+                System.out.println("Бег");
                 treadmill.setRange(treadmill.getRange()*2);
                 wall.setHeight(wall.getHeight()*2);
                 for (int i = 0; i < 3; i++) {

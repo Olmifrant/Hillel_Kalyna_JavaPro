@@ -18,8 +18,8 @@ public class Robot extends Team {
     @Override
     public void jumpWall(Wall wall) {
         if (wall.getHeight() <= getMaxJump())
-            System.out.println("Робот " + getName() + " смог перепрыгнуть препятствие высотой " + wall.getHeight() + " метра");
-        else System.out.println("Робот " + getName() + " не смог перепрыгнуть препятствие высотой " + wall.getHeight()
+            System.out.println("Робот " + getName() + " смог перепрыгнуть стену высотой " + wall.getHeight() + " метра");
+        else System.out.println("Робот " + getName() + " не смог перепрыгнуть стену высотой " + wall.getHeight()
                 + " метров поскольку может прыгнуть лишь на "
                 + getMaxJump() + " и  больше прыгать не будет");
     }
