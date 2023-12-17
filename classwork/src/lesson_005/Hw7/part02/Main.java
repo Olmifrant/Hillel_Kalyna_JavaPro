@@ -40,7 +40,7 @@ public class Main {
                     }
                     team[j].jumpWall(wall);
                 }
-                System.out.println(Stage + " этап окончен" );
+                System.out.println(Stage + " этап завершен" );
             }
         } while (Stage == 4);
 
