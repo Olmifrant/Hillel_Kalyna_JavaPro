@@ -10,19 +10,17 @@ public class Human extends Team {
     public void runTreadmill(Treadmill treadmill) {
         if (treadmill.getRange() <= getMaxRange()) {
             System.out.println("Человек " + getName() + " пробежал " + treadmill.getRange() + " метров");
-        } else {
-            System.out.println("Человек " + getName() + " не смог пробежать " + treadmill.getRange() + " метров");
-        }
-
+        } else System.out.println("Человек " + getName() + " не смог пробежать "
+                    + treadmill.getRange() + " метров поскольку может пробежать лишь "
+                + getMaxRange() + " и больше бегать не будет");
     }
-
 
     @Override
     public void jumpWall(Wall wall) {
+
         if (wall.getHeight() <= getMaxJump()) {
             System.out.println("Человек " + getName() + " смог перепрыгнуть препятствие высотой " + wall.getHeight() + " метра");
-        } else {
-            System.out.println("Человек " + getName() + " не смог перепрыгнуть препятствие");
-        }
+        } else System.out.println("Человек " + getName() + " не смог перепрыгнуть препятствие высотой " + wall.getHeight()
+                    + " метров поскольку может прыгнуть лишь на " + getMaxJump() +" и  больше прыгать не будет");
     }
 }

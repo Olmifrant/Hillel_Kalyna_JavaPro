@@ -6,6 +6,7 @@ public abstract class Team {
     private int maxRange;
     private int maxJump;
 
+
     public Team(String name, int maxRange, int maxJump) {
         this.maxRange = maxRange;
         this.maxJump = maxJump;
