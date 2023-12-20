@@ -1,7 +1,6 @@
 package lesson_006;
 
 public class SubscriberGen {
-
     public static Subscriber[] genSubArray() {
 
         Subscriber[] array = new Subscriber[10];

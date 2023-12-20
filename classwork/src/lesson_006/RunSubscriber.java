@@ -9,6 +9,7 @@ public class RunSubscriber {
         System.out.println("Информация об абонентах");
 
         while (true) {
+
             System.out.println();
             System.out.println("Выберете вариант из списка: ");
             System.out.println("01. Сведения об абонентах, у которых время внутригородских разговоров превышает заданное;");

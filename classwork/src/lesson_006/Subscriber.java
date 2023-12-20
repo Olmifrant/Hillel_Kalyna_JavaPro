@@ -112,5 +112,4 @@ public class Subscriber {
                 ",   Траффик: " + traffic;
 
     }
-
 }

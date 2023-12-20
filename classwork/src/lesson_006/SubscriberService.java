@@ -7,5 +7,4 @@ public interface SubscriberService {
     void subscriber(Subscriber[] subscribers, String firstLetter);
     void traffic(Subscriber[] subscribers);
     void negativeBal(Subscriber[] subscribers);
-
 }
