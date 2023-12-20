@@ -37,17 +37,18 @@ public  class SubscriberServiceImpl implements SubscriberService {
                 cout++;
             }
         }
-        System.out.println("Всего абонентов пользовавшихся междугородной связью " + cout);
+        System.out.println("Всего абонентов пользовавшихся междугородней связью " + cout);
     }
 
     @Override
-    public void subscriber(Subscriber[] subscribers, String firstLeteer) {
+    public void subscriber(Subscriber[] subscribers, String firstLetter) {
 
+        System.out.println("Абоненты с фамилиями на букву " + firstLetter);
         Subscriber[] array = SubscriberGen.genSubArray();
         Subscriber[] subscribers0 = SubscriberGen.genSubArray();
 
         for ( Subscriber s : subscribers) {
-            if (s.getLastName().startsWith(firstLeteer)) {
+            if (s.getLastName().startsWith(firstLetter)) {
                 System.out.println(s.toString());
             }
         }

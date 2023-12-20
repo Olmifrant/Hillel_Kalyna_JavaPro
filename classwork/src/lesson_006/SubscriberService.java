@@ -4,7 +4,7 @@ public interface SubscriberService {
 
     void cityCalls(Subscriber[] subscribers );
     void interCity(Subscriber[] subscribers);
-    void subscriber(Subscriber[] subscribers, String firstLeteer);
+    void subscriber(Subscriber[] subscribers, String firstLetter);
     void traffic(Subscriber[] subscribers);
     void negativeBal(Subscriber[] subscribers);
 

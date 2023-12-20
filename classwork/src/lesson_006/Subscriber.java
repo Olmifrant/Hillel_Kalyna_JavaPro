@@ -109,9 +109,8 @@ public class Subscriber {
                 ",   Баланс: "  + balanse +
                 ",   Городские звонки: " + cityCallMin +
                 ",   Междугородние звонки: " + interCityCall +
-                ",   Траффик: " + traffic
-              ;
-    }
+                ",   Траффик: " + traffic;
 
+    }
 
 }
