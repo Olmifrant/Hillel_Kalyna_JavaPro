@@ -120,15 +120,15 @@ public class Subscriber {
     @Override
     public String toString() {
         return "Абонент " +
-                "   " + id +
-                ",   Фамилия:     " + lastName  +
-                ",   Имя:    "  + firstName  +
-                ",   Город:    " + city  +
-                ",   Номер телефона: " + phoneNumb  +
-                ",   Баланс: "  + balanse +
-                ",   Городские звонки: " + cityCallMin +
-                ",   Междугородние звонки: " + interCityCall +
-                ",   Траффик: " + traffic;
+                " " + id +
+                ",   Фамилия:  " + lastName  +
+                ",   Имя:  "  + firstName  +
+                ",   Город:  " + city  +
+                ",   Номер телефона:  " + phoneNumb  +
+                ",   Баланс:  "  + balanse +
+                ",   Городские звонки:  " + cityCallMin +
+                ",   Междугородние звонки:  " + interCityCall +
+                ",   Траффик:  " + traffic;
 
     }
 }

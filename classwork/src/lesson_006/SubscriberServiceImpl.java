@@ -24,7 +24,7 @@ public  class SubscriberServiceImpl implements SubscriberService {
     @Override
     public void interCity(Subscriber[] subscribers) {
 
-        System.out.println("Сведения об абонентах, пользовавшихся междугородной связью;");
+        System.out.println("Сведения об абонентах, пользовавшихся междугородней связью;");
         Subscriber[] array = SubscriberGen.genSubArray();
         Subscriber[] subscribers0 = SubscriberGen.genSubArray();
 
