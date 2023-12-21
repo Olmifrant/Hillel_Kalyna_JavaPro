@@ -5,15 +5,13 @@ public  class SubscriberServiceImpl implements SubscriberService {
     @Override
     public void cityCalls(Subscriber[] subscribers) {
 
-        int cityLimit = 200;
-        int cout =0;
         System.out.println("Сведения об абонентах, у которых время внутригородских разговоров превышает лимит");
-
         Subscriber[] array = SubscriberGen.genSubArray();
         Subscriber[] subscribers0 = SubscriberGen.genSubArray();
 
+        int cout = 0;
         for (Subscriber s : subscribers) {
-                if (s.getCityCallMin() > cityLimit) {
+                if (s.getCityCallMin() > s.getInterCityLimit()) {
                     System.out.println(s.toString());
                     cout++;
                 }
@@ -24,15 +22,13 @@ public  class SubscriberServiceImpl implements SubscriberService {
     @Override
     public void interCity(Subscriber[] subscribers) {
 
-        int interCityLimit= 50;
-        int cout =0;
         System.out.println("Сведения об абонентах, пользовавшихся междугородной связью;");
-
         Subscriber[] array = SubscriberGen.genSubArray();
         Subscriber[] subscribers0 = SubscriberGen.genSubArray();
 
+        int cout =0;
         for (Subscriber s : subscribers) {
-            if (s.getInterCityCall() < interCityLimit ) {
+            if (s.getInterCityCall() < s.getInterCityLimit() ) {
                 System.out.println(s.toString());
                 cout++;
             }
@@ -55,15 +51,16 @@ public  class SubscriberServiceImpl implements SubscriberService {
     }
 
     @Override
-    public void traffic(Subscriber[] subscribers) {
+    public void traffic(Subscriber[] subscribers , String city ) {
+
+        System.out.println("Cуммарное потребление трафика интернета для определенного города");
         Subscriber[] array = SubscriberGen.genSubArray();
         Subscriber[] subscribers0 = SubscriberGen.genSubArray();
 
-        System.out.println("Cуммарное потребление трафика интернета для определенного города");
         int cityGb1 = 0;
         int cityGb2 = 0;
         for (Subscriber s : subscribers) {
-            if ((s.getCity() == "Ланниспорт") ) {
+            if ((s.getCity() == city) ) {
                 int a  =  s.getTraffic();
                 cityGb1 = a + cityGb1;
             }else {
@@ -73,7 +70,6 @@ public  class SubscriberServiceImpl implements SubscriberService {
         }
         System.out.println("Потребление трафика интернета для города Ланниспорт " + cityGb1 + " Gb");
         System.out.println("Потребление трафика интернета для города Винтерфелл " + cityGb2 + " Gb");
-
     }
 
     @Override

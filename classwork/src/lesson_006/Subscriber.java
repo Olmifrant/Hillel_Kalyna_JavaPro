@@ -10,6 +10,9 @@ public class Subscriber {
     private int cityCallMin;
     private int interCityCall;
     private int traffic;
+    private  int cityLimit = 200;
+    private   int interCityLimit= 50;
+
 
     public Subscriber(int id, String lastName, String firstName,
                       String city, String phoneNumb, double balanse, int cityCallMin,
@@ -96,6 +99,22 @@ public class Subscriber {
 
     public void setTraffic(int traffic) {
         this.traffic = traffic;
+    }
+
+    public int getCityLimit() {
+        return cityLimit;
+    }
+
+    public void setCityLimit(int cityLimit) {
+        this.cityLimit = cityLimit;
+    }
+
+    public int getInterCityLimit() {
+        return interCityLimit;
+    }
+
+    public void setInterCityLimit(int interCityLimit) {
+        this.interCityLimit = interCityLimit;
     }
 
     @Override

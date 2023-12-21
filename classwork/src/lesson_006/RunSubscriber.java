@@ -53,13 +53,13 @@ public class RunSubscriber {
                 case 3:
                     Subscriber[] subscribers2 = SubscriberGen.genSubArray();
                     SubscriberService subService2 = new SubscriberServiceImpl();
-                    subService2.subscriber(subscribers2, "Л");
+                    subService2.subscriber(subscribers2, "С");
                     break;
 
                 case 4:
                     Subscriber[] subscribers3 = SubscriberGen.genSubArray();
                     SubscriberService subService3 = new SubscriberServiceImpl();
-                    subService3.traffic(subscribers3);
+                    subService3.traffic(subscribers3 ,"Ланниспорт");
                     break;
 
                 case 5:
