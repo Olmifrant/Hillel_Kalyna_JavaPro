@@ -1,6 +1,6 @@
 package lesson_002;
 
-public class HomeWorkTwoPartOne {
+public class Hw2_01 {
 
     public static void main(String[] args) {
 
