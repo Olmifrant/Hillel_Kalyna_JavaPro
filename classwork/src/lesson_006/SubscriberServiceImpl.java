@@ -18,7 +18,7 @@ public  class SubscriberServiceImpl implements SubscriberService {
                     cout++;
                 }
         }
-        System.out.println("Всего абонентов с отрицательным балансом " + cout);
+        System.out.println("Всего абонентов с превышением лимита городских звонков  " + cout);
     }
 
     @Override
