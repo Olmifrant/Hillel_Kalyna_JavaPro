@@ -24,7 +24,7 @@ public  class SubscriberServiceImpl implements SubscriberService {
     @Override
     public void interCity(Subscriber[] subscribers) {
 
-        System.out.println("Сведения об абонентах, пользовавшихся междугородней связью;");
+        System.out.println("Сведения об абонентах, пользовавшихся междугородной связью;");
         Subscriber[] array = SubscriberGen.genSubArray();
         Subscriber[] subscribers0 = SubscriberGen.genSubArray();
 
@@ -35,7 +35,7 @@ public  class SubscriberServiceImpl implements SubscriberService {
                 cout++;
             }
         }
-        System.out.println("Всего абонентов пользовавшихся междугородней связью " + cout);
+        System.out.println("Всего абонентов пользовавшихся междугородной связью " + cout);
     }
 
     @Override
