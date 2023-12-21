@@ -1,5 +1,7 @@
 package lesson_006;
 
+import java.util.Objects;
+
 public  class SubscriberServiceImpl implements SubscriberService {
 
     @Override
@@ -60,7 +62,7 @@ public  class SubscriberServiceImpl implements SubscriberService {
         int cityGb1 = 0;
         int cityGb2 = 0;
         for (Subscriber s : subscribers) {
-            if ((s.getCity() == city) ) {
+            if ((Objects.equals(s.getCity(), city)) ) {
                 int a  =  s.getTraffic();
                 cityGb1 = a + cityGb1;
             }else {
