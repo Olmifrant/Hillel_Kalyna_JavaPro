@@ -1,4 +1,4 @@
-package lesson_0088;
+package lesson_007;
 
 import java.util.Scanner;
 
