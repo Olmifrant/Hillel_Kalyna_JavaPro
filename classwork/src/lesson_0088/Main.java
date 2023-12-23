@@ -3,26 +3,20 @@ package lesson_0088;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-
-        MyArrayList myArrayList = new MyArrayList();
-        //System.out.println(myArrayList.getArray().length);
-
-        int a = 0;
-        int count = 0;
-        for (int i = 0; i <= 15; i++) {
-            String arr = Integer.toString(i);
-            myArrayList.addValue(arr);
-            a = a + count;
-            count++;
-        }
 
         System.out.println("Массив");
 
+        MyArrayList myArrayList = new MyArrayList();
+
+        int a = 0;
+        for (int i = 1; i <= 15; i++) {
+            String arr = Integer.toString(i);
+            myArrayList.addValue(arr);
+
+        }
 
         while (true) {
-
             System.out.println();
             System.out.println("Выберете вариант из списка: ");
             System.out.println("01. Вывести на экран весь массив");
@@ -39,7 +33,7 @@ public class Main {
                 if (scan.hasNextInt()) {
                     choice = scan.nextInt();
                     scan.nextLine();
-                    if (choice >= 1 && choice <= 6) {
+                    if (choice >= 1 && choice <= 7) {
                         break;
                     } else {
                         System.out.println("Выберите вариант из списка пожалуйста!");
@@ -50,21 +44,18 @@ public class Main {
                 }
             }
 
-
-
             switch (choice) {
 
                 case 1:
                     myArrayList.print();
                     break;
 
-
                 case 2:
                     myArrayList.addValue(userValue());
                     break;
 
                 case 3:
-                    myArrayList.addIndexAndValue(userIndex(),userValue() );
+                    myArrayList.addIndexAndValue(userIndex(), userValue());
                     break;
 
                 case 4:
@@ -72,13 +63,12 @@ public class Main {
                     break;
 
                 case 5:
-
+                    myArrayList.removeValue(userValue());
                     break;
 
                 case 6:
                     myArrayList.get(userIndex());
                     break;
-
 
                 case 7:
                     return;
@@ -88,7 +78,6 @@ public class Main {
                     continue;
             }
         }
-
 
     }
 

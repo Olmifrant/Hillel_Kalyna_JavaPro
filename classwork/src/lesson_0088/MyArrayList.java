@@ -1,47 +1,23 @@
 package lesson_0088;
 
+
 public class MyArrayList {
 
     private final int INIT_SIZE = 2;
     private final int CUT_RATE = 2;
     private String[] array = new String[INIT_SIZE];
-    private int pointer = 0;
-    private final int index = 0;
+    private int count = 0;
 
 
-//    public int getINIT_SIZE() {
-//        return INIT_SIZE;
-//    }
-//
-//    public int getCUT_RATE() {
-//        return CUT_RATE;
-//    }
-
-    public String[] getArray() {
-        return array;
-    }
-
-//    public void setArray(String[] array) {
-//        this.array = array;
-//    }
-//
-//    public int getPointer() {
-//        return pointer;
-//    }
-//
-//    public void setPointer(int pointer) {
-//        this.pointer = pointer;
-//    }
-
-
-    public void get (int index){
-        System.out.println("Ячейка " + index + " содержит значение " + array[index]);
-
+    public void get(int index) {
+        if (index <= count) {
+            System.out.println("Ячейка " + index + " содержит значение " + array[index]);
+        } else {
+            System.out.println("Невозможно вывести значение ячейки " + index + " поскольку текущая длина массива " + array.length);
+        }
     }
 
     public void addIndexAndValue(int index, String value) {
-
-
         int n = array.length;
         if (n < index) {
             System.out.println("Невозможно использовать ячейку " + index + " поскольку текущая длина массива " + n);
@@ -58,14 +34,14 @@ public class MyArrayList {
         }
     }
 
-    public void addValue (String  value) {
-        if (pointer == array.length )
+    public void addValue(String value) {
+        if (count == array.length)
             resize(array.length * 2);
-        array[pointer++] = value;
+        array[count++] = value;
 
     }
 
-    public void print () {
+    public void print() {
         System.out.println();
         for (int i = 0; i < array.length; i++) {
             if (i == array.length - 1) {
@@ -78,33 +54,50 @@ public class MyArrayList {
     }
 
     public void remove(int index) {
-        for (int i = index; i < pointer; i++)
-            array[i] = array[i + 1];
-        array[pointer] = null;
-        pointer--;
-        if (array.length > INIT_SIZE && pointer < array.length / CUT_RATE)
-            resize(array.length / 2);
+
+        if (index <= array.length) {
+
+            for (int i = index; i < count; i++)
+                array[i] = array[i + 1];
+            array[count] = null;
+            count--;
+            System.out.println("Значение ячейки " + index + " успешно удалено");
+            if (array.length > INIT_SIZE && count < array.length / CUT_RATE)
+                resize(array.length / 2);
+        } else {
+            System.out.println("Невозможно удалить ячейку " + index + " поскольку длинны массива " + array.length);
+        }
 
     }
 
-    public void removeValue (String value) {
+    public void removeValue(String value) {
 
+        int z = 0;
 
+        for (int i = 0; i < count; i++) {
+            if (value.equals(array[i])) {
+                z = i;
+            }
+        }
 
+        if (z > 0) {
+            for (int i = z; i < count; i++)
+                array[i] = array[i + 1];
+            array[count] = null;
+            count--;
+            System.out.println("Значение " + value + " обнаружено в ячейке " + z + " и успешно удалено");
+            if (array.length > INIT_SIZE && count < array.length / CUT_RATE)
+                resize(array.length / 2);
 
+        } else {
+            System.out.println("В массиве нет таких значений");
+        }
     }
 
-    public int size () {
-        return pointer;
-    }
 
     private void resize(int newLength) {
         String[] newArray = new String[newLength];
-        System.arraycopy(array, 0, newArray, 0, pointer);
-        //System.out.println("длина массива" + array.length);
+        System.arraycopy(array, 0, newArray, 0, count);
         array = newArray;
-    }
-
-    public void addIndexAndValue() {
     }
 }
