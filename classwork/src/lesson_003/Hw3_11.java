@@ -39,6 +39,7 @@ public class Hw3_11 {
         System.out.println();
         System.out.println("Содержимое массива после замены ");
         OutputMass(mass);
+
     }
 
     public static void OutputMass(int[] mass) {

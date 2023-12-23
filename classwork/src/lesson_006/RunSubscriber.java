@@ -74,9 +74,6 @@ public class RunSubscriber {
                 default:
                     System.out.println("JAVе так спокойнее");
                     continue;
-
-
-
             }
         }
     }
