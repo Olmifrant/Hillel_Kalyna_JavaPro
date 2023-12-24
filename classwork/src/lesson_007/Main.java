@@ -9,11 +9,9 @@ public class Main {
 
         MyArrayList myArrayList = new MyArrayList();
 
-        int a = 0;
         for (int i = 1; i <= 15; i++) {
             String arr = Integer.toString(i);
             myArrayList.addValue(arr);
-
         }
 
         while (true) {
@@ -78,15 +76,24 @@ public class Main {
                     continue;
             }
         }
-
     }
 
     public static int  userIndex () {
 
         System.out.println("Введите номер ячейки");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        sc.nextLine();
+
+        Scanner scan = new Scanner(System.in);
+        int n = 0;
+        while (true) {
+            if (scan.hasNextInt()) {
+                n = scan.nextInt();
+                scan.nextLine();
+                    break;
+            } else {
+                System.out.println("Только цифры пожалуйста!");
+                scan.nextLine();
+            }
+        }
         return n;
     }
 
