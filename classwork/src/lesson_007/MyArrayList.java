@@ -72,15 +72,15 @@ public class MyArrayList {
 
     public void removeValue(String value) {
 
-        int z = 0;
+        int z = -1;
 
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count ; i++) {
             if (value.equals(array[i])) {
                 z = i;
             }
         }
 
-        if (z > 0) {
+        if (z >= 0) {
             for (int i = z; i < count; i++)
                 array[i] = array[i + 1];
             array[count] = null;
