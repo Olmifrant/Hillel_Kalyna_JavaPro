@@ -102,10 +102,10 @@ public class CollectionImpl implements Collection {
     public boolean equals (Object coll) {
 
         if (array.equals(coll)) {
-            System.out.println("да");
+            System.out.println("Коллекции одинаковы");
 
         } else {
-            System.out.println("нет");
+            System.out.println("Коллекции разные");
         }
 
         return false;
@@ -114,11 +114,19 @@ public class CollectionImpl implements Collection {
     @Override
     public void clear() {
 
+        for (int i = 0 ; i < array.length ; i++) {
+            array[i] = null;
+            pointer-- ;
+            if (array.length > INIT_SIZE && pointer < array.length / CUT_RATE)
+                resize(array.length / 2);
+        }
+
+
     }
 
     @Override
-    public int size() {
-        return 0;
+    public void size() {
+        System.out.println("Размер коллекции в данный момент " + pointer );
     }
 
     private void resize(int newLength) {
