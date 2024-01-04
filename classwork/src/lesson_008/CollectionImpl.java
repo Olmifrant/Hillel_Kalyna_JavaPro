@@ -8,10 +8,13 @@ import java.util.Map;
 
 public class CollectionImpl implements Collection {
 
-    final int INIT_SIZE = 4;
+    final int INIT_SIZE = 2;
     final int CUT_RATE = 2;
     int pointer = 0;
     Object[] array = new Object[INIT_SIZE];
+
+
+
 
 
     @Override
@@ -80,7 +83,7 @@ public class CollectionImpl implements Collection {
                 System.out.println("Значение ячейки " + z + " успешно удалено");
             }
         } else {
-            System.out.println("В массиве нет таких значений");
+            System.out.println("В коллекции нет таких значений");
         }
     }
 
@@ -98,6 +101,7 @@ public class CollectionImpl implements Collection {
     @Override
     public void contain(String o) {
 
+
         int z = -1;
         for (int i = 0; i < pointer ; i++) {
             if (o.equals(array[i])) {
@@ -112,9 +116,10 @@ public class CollectionImpl implements Collection {
     }
 
     @Override
-    public void  eequals (Object coll) {
+    public void  eequals (Object str) {
 
-        if (array.equals(coll)) {
+
+        if (array.equals(str)) {
             System.out.println("Коллекции одинаковы");
         } else {
             System.out.println("Коллекции разные");
@@ -125,22 +130,10 @@ public class CollectionImpl implements Collection {
     @Override
     public void clear() {
 
-
-//        //modCount++;
-//        // Let gc do its work
-//        for (int i = 0; i < pointer; i++)
-//            array[i] = null;
-//
-//        pointer = 0;
-
-
-        for (int i = 0 ; i < array.length ; i++) {
-            array[i] = null;
-            pointer-- ;
-            if (array.length > INIT_SIZE && pointer < array.length / CUT_RATE)
-                resize(array.length / 2);
-        }
-        //pointer=0;
+        Object[] arr = new Object[1];
+        arr[0] = null;
+        array = arr;
+        pointer = 0;
 
     }
 
@@ -154,6 +147,5 @@ public class CollectionImpl implements Collection {
         System.arraycopy(array, 0, newArray, 0, pointer);
         array = newArray;
     }
-
 
 }

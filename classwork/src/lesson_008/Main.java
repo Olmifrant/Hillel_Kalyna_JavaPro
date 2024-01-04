@@ -1,9 +1,6 @@
 package lesson_008;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -16,6 +13,9 @@ public class Main {
             collection.addValue(arr);
         }
 
+
+        Collection coll = new CollectionImpl();
+        coll.addValue(collection.toString());
 
 
 
@@ -53,9 +53,9 @@ public class Main {
                 case 4: collection.delete(userValue()); break;
                 case 5: collection.getIndex(userIndex()); break;
                 case 6: collection.contain(userValue()); break;
-                case 7:; collection.equals(testCol());break;
-                case 8:
-                case 9:
+                case 7:; collection.eequals(testCol());break;
+                case 8: collection.clear(); break;
+                case 9: collection.size(); break;
                 case 10: System.out.println("Завершение работы"); return;
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
             }
@@ -88,11 +88,11 @@ public class Main {
         return str;
     }
 
-    public static Collection testCol() {
-        Collection test = new CollectionImpl();
+    public static Object testCol() {
+
+        Object[] test = new Object[20];
         for (int i = 1; i < 20; i++) {
-            String arr = Integer.toString(i);
-            test.addValue(arr);
+         test[i] = i;
         }
         return test;
     }

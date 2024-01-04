@@ -10,8 +10,8 @@ public interface Collection  {
     void delete (String o);
     void getIndex  (int index);
     void contain (String o);
-    boolean equals (Object collection);
+    void  eequals (Object str);
     void clear();
-    int size();
+    void size();
 
 }
