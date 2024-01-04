@@ -1,6 +1,5 @@
 package lesson_008;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -24,7 +23,6 @@ public class CollectionImpl implements Collection {
         }
         System.out.println();
     }
-
 
     public void addValue(String o) {
         if (pointer == array.length)
@@ -96,7 +94,6 @@ public class CollectionImpl implements Collection {
     @Override
     public void contain(String o) {
 
-
         int z = -1;
         for (int i = 0; i < pointer ; i++) {
             if (o.equals(array[i])) {
@@ -115,15 +112,14 @@ public class CollectionImpl implements Collection {
 
         ArrayList<Object> list = new ArrayList<>(Arrays.asList(array));
 
-        System.out.println(str);
-        System.out.println(list);
+        System.out.println("Тестоая  коллекция " + str);
+        System.out.println("Рабочая  коллекция " + list);
 
         if (list.equals(str)) {
             System.out.println("Коллекции одинаковы");
         } else {
             System.out.println("Коллекции разные");
         }
-
     }
 
     @Override
@@ -133,7 +129,6 @@ public class CollectionImpl implements Collection {
         arr[0] = null;
         array = arr;
         pointer = 0;
-
     }
 
     @Override
@@ -146,5 +141,4 @@ public class CollectionImpl implements Collection {
         System.arraycopy(array, 0, newArray, 0, pointer);
         array = newArray;
     }
-
 }

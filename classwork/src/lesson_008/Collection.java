@@ -1,7 +1,5 @@
 package lesson_008;
 
-import java.util.List;
-
 public interface Collection  {
 
     void print();

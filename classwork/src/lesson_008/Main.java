@@ -13,12 +13,6 @@ public class Main {
             collection.addValue(arr);
         }
 
-
-        Collection coll = new CollectionImpl();
-        coll.addValue(collection.toString());
-
-
-
         while (true) {
             System.out.println();
             System.out.println("Выберете вариант из списка: ");
@@ -94,7 +88,6 @@ public class Main {
         for (int i = 1; i <17 ; i++) {
             test.add(Integer.toString(i));
         }
-
         return  test;
     }
 }
