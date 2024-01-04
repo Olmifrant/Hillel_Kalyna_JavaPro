@@ -60,7 +60,7 @@ public class CollectionImpl implements Collection {
 //        System.out.println("pointer " + pointer);
 //        System.out.println("array " + array.length);
         if (z >= 0) {
-            if (pointer > (z +1) ) {
+            if (array.length > (z +1) ) {
                 for (int i = z; i < pointer; i++)
                     array[i] = array[i + 1];
                 array[pointer] = null;

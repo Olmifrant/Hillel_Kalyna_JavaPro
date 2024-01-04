@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println();
         System.out.println("Массив");
 
         MyArrayList myArrayList = new MyArrayList();
@@ -31,11 +32,11 @@ public class Main {
                 if (scan.hasNextInt()) {
                     choice = scan.nextInt();
                     scan.nextLine();
-                    if (choice >= 1 && choice <= 7) {
+                   // if (choice >= 1 && choice <= 7) {
                         break;
-                    } else {
-                        System.out.println("Выберите вариант из списка пожалуйста!");
-                    }
+                   // } else {
+                        //System.out.println("Выберите вариант из списка пожалуйста!");
+                    //}
                 } else {
                     System.out.println("Только цифры пожалуйста!");
                     scan.nextLine();
@@ -69,10 +70,11 @@ public class Main {
                     break;
 
                 case 7:
+                    System.out.println("Завершение работы");
                     return;
 
                 default:
-                    System.out.println("JAVе так спокойнее");
+                    System.out.println("Выберите вариант из списка пожалуйста!");
                     continue;
             }
         }

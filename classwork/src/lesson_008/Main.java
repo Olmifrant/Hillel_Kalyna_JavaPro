@@ -90,10 +90,18 @@ public class Main {
 
     public static Object testCol() {
 
-        Object[] test = new Object[20];
-        for (int i = 1; i < 20; i++) {
-         test[i] = i;
+        List<String> test = new ArrayList<>();
+        for (int i = 1; i <20 ; i++) {
+            test.add(Integer.toString(i));
+
         }
-        return test;
+
+        System.out.println(test);
+
+//        Object[] test = new Object[20];
+//        for (int i = 1; i < 20; i++) {
+//         test[i] = i;
+//        }
+        return  test;
     }
 }
