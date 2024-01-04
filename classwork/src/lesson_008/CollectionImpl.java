@@ -1,20 +1,11 @@
 package lesson_008;
 
-import java.sql.Array;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.Map;
-
 public class CollectionImpl implements Collection {
 
     final int INIT_SIZE = 2;
     final int CUT_RATE = 2;
     int pointer = 0;
     Object[] array = new Object[INIT_SIZE];
-
-
-
 
 
     @Override
