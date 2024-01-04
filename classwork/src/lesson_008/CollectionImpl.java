@@ -1,8 +1,14 @@
 package lesson_008;
 
+import java.sql.Array;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.Map;
+
 public class CollectionImpl implements Collection {
 
-    final int INIT_SIZE = 8;
+    final int INIT_SIZE = 4;
     final int CUT_RATE = 2;
     int pointer = 0;
     Object[] array = new Object[INIT_SIZE];
@@ -51,21 +57,28 @@ public class CollectionImpl implements Collection {
     public void delete(String o) {
 
         int z = -1;
-        for (int i = 0; i < pointer; i++) {
+        for (int i = 0; i < array.length ; i++) {
             if (o.equals(array[i])) {
                 z = i;
             }
         }
-
+//        System.out.println("z = " + z);
+//        System.out.println("pointer " + pointer);
+//        System.out.println("array " + array.length);
         if (z >= 0) {
-            for (int i = z; i < pointer; i++)
-                array[i] = array[i + 1];
-            array[pointer] = null;
-            pointer--;
-            System.out.println("Значение " + o + " обнаружено в ячейке " + z + " и успешно удалено");
-            if (array.length > INIT_SIZE && pointer < array.length / CUT_RATE)
-                resize(array.length / 2);
-
+            if (pointer > (z +1) ) {
+                for (int i = z; i < pointer; i++)
+                    array[i] = array[i + 1];
+                array[pointer] = null;
+                pointer--;
+                System.out.println("Значение ячейки " + z + " успешно удалено");
+                if (array.length > INIT_SIZE && pointer < array.length / CUT_RATE)
+                    resize(array.length / 2);
+            } else {
+                array[z] = null;
+                pointer--;
+                System.out.println("Значение ячейки " + z + " успешно удалено");
+            }
         } else {
             System.out.println("В массиве нет таких значений");
         }
@@ -99,20 +112,27 @@ public class CollectionImpl implements Collection {
     }
 
     @Override
-    public boolean equals (Object coll) {
+    public void  eequals (Object coll) {
 
         if (array.equals(coll)) {
             System.out.println("Коллекции одинаковы");
-
         } else {
             System.out.println("Коллекции разные");
         }
 
-        return false;
     }
 
     @Override
     public void clear() {
+
+
+//        //modCount++;
+//        // Let gc do its work
+//        for (int i = 0; i < pointer; i++)
+//            array[i] = null;
+//
+//        pointer = 0;
+
 
         for (int i = 0 ; i < array.length ; i++) {
             array[i] = null;
@@ -120,7 +140,7 @@ public class CollectionImpl implements Collection {
             if (array.length > INIT_SIZE && pointer < array.length / CUT_RATE)
                 resize(array.length / 2);
         }
-
+        //pointer=0;
 
     }
 
