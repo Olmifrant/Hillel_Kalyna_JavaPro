@@ -8,7 +8,7 @@ public class Main {
 
         Collection collection = new CollectionImpl();
 
-        for (int i = 1; i < 20; i++) {
+        for (int i = 1; i < 15; i++) {
             String arr = Integer.toString(i);
             collection.addValue(arr);
         }
@@ -91,17 +91,10 @@ public class Main {
     public static Object testCol() {
 
         List<String> test = new ArrayList<>();
-        for (int i = 1; i <20 ; i++) {
+        for (int i = 1; i <17 ; i++) {
             test.add(Integer.toString(i));
-
         }
 
-        System.out.println(test);
-
-//        Object[] test = new Object[20];
-//        for (int i = 1; i < 20; i++) {
-//         test[i] = i;
-//        }
         return  test;
     }
 }

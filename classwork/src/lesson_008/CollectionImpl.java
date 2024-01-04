@@ -1,5 +1,9 @@
 package lesson_008;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class CollectionImpl implements Collection {
 
     final int INIT_SIZE = 2;
@@ -109,8 +113,12 @@ public class CollectionImpl implements Collection {
     @Override
     public void  eequals (Object str) {
 
+        ArrayList<Object> list = new ArrayList<>(Arrays.asList(array));
 
-        if (array.equals(str)) {
+        System.out.println(str);
+        System.out.println(list);
+
+        if (list.equals(str)) {
             System.out.println("Коллекции одинаковы");
         } else {
             System.out.println("Коллекции разные");
