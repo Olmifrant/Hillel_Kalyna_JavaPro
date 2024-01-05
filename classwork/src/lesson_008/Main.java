@@ -82,7 +82,7 @@ public class Main {
         return str;
     }
 
-    public static Object testCol() {
+    public static List<String> testCol() {
 
         List<String> test = new ArrayList<>();
         for (int i = 1; i <17 ; i++) {

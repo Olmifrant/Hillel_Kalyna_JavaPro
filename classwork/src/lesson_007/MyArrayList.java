@@ -72,26 +72,55 @@ public class MyArrayList {
 
     public void removeValue(String value) {
 
-        int z = -1;
 
-        for (int i = 0; i < count ; i++) {
+        int z = -1;
+        for (int i = 0; i < array.length ; i++) {
             if (value.equals(array[i])) {
                 z = i;
             }
         }
-
+//        System.out.println("z = " + z);
+//        System.out.println("pointer " + pointer);
+//        System.out.println("array " + array.length);
         if (z >= 0) {
-            for (int i = z; i < count; i++)
-                array[i] = array[i + 1];
-            array[count] = null;
-            count--;
-            System.out.println("Значение " + value + " обнаружено в ячейке " + z + " и успешно удалено");
-            if (array.length > INIT_SIZE && count < array.length / CUT_RATE)
-                resize(array.length / 2);
-
+            if (array.length > (z +1) ) {
+                for (int i = z; i < count; i++)
+                    array[i] = array[i + 1];
+                array[count] = null;
+                count--;
+                System.out.println("Значение ячейки " + z + " успешно удалено");
+                if (array.length > INIT_SIZE && count < array.length / CUT_RATE)
+                    resize(array.length / 2);
+            } else {
+                array[z] = null;
+                count--;
+                System.out.println("Значение ячейки " + z + " успешно удалено");
+            }
         } else {
-            System.out.println("В массиве нет таких значений");
+            System.out.println("В коллекции нет таких значений");
         }
+
+
+//        int z = -1;
+//
+//        for (int i = 0; i < count ; i++) {
+//            if (value.equals(array[i])) {
+//                z = i;
+//            }
+//        }
+//
+//        if (z >= 0) {
+//            for (int i = z; i < count; i++)
+//                array[i] = array[i + 1];
+//            array[count] = null;
+//            count--;
+//            System.out.println("Значение " + value + " обнаружено в ячейке " + z + " и успешно удалено");
+//            if (array.length > INIT_SIZE && count < array.length / CUT_RATE)
+//                resize(array.length / 2);
+//
+//        } else {
+//            System.out.println("В массиве нет таких значений");
+//        }
     }
 
 
