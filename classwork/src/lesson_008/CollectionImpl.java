@@ -16,7 +16,6 @@ public class CollectionImpl implements Collection {
     public boolean print() {
 
         System.out.println(Arrays.toString(array));
-
         return true;
     }
 
@@ -24,7 +23,6 @@ public class CollectionImpl implements Collection {
         if (pointer == array.length)
             resize(array.length * 2);
         array[pointer++] = o;
-
         return true;
     }
 
@@ -83,7 +81,7 @@ public class CollectionImpl implements Collection {
         if (index <= pointer) {
             System.out.println("Ячейка " + index + " содержит значение " + array[index]);
         } else {
-            System.out.println("Невозможно вывести значение ячейки " + index + " поскольку текущая длина массива " + array.length);
+            System.out.println("Невозможно вывести значение ячейки " + index + " поскольку текущий размер коллекции " + pointer);
         }
         return "Some";
     }

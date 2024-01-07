@@ -58,7 +58,7 @@ public class Main {
 
         System.out.println("Введите номер коллекции");
         Scanner scan = new Scanner(System.in);
-        int n = 0;
+        int n;
         while (true) {
             if (scan.hasNextInt()) {
                 n = scan.nextInt();
