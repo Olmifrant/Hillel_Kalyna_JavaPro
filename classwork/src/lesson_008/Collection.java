@@ -2,14 +2,14 @@ package lesson_008;
 
 public interface Collection  {
 
-    void print();
-    void addValue (String o);
-    void addIndexAndValue (int index, String o);
-    void delete (String o);
-    void getIndex  (int index);
-    void contain (String o);
-    void  eequals (Object str);
-    void clear();
-    void size();
+    boolean print();
+    boolean addValue (String o);
+    boolean  addIndexAndValue (int index, String o);
+    boolean delete (String o);
+    String  getIndex  (int index);
+    boolean contain (String o);
+     boolean equals (String[] str);
+    boolean clear();
+    int  size();
 
 }

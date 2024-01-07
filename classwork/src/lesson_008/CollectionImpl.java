@@ -2,6 +2,7 @@ package lesson_008;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class CollectionImpl implements Collection {
 
@@ -12,27 +13,23 @@ public class CollectionImpl implements Collection {
 
 
     @Override
-    public void print() {
-        System.out.println();
-        for (int i = 0; i < array.length; i++) {
-            if (i == array.length - 1) {
-                System.out.print(array[i]);
-            } else {
-                System.out.print(array[i] + ", ");
-            }
-        }
-        System.out.println();
+    public boolean print() {
+
+        System.out.println(Arrays.toString(array));
+
+        return true;
     }
 
-    public void addValue(String o) {
+    public boolean addValue(String o) {
         if (pointer == array.length)
             resize(array.length * 2);
-        array[pointer ++] = o;
+        array[pointer++] = o;
 
+        return true;
     }
 
     @Override
-    public void addIndexAndValue(int index, String o) {
+    public boolean addIndexAndValue(int index, String o) {
 
         if (array.length < index) {
             System.out.println("Невозможно использовать ячейку " + index + " поскольку текущая длина массива " + array.length);
@@ -47,10 +44,11 @@ public class CollectionImpl implements Collection {
             }
             array = newArray;
         }
+        return true;
     }
 
     @Override
-    public void delete(String o) {
+    public boolean delete(String o) {
 
         int z = -1;
         for (int i = 0; i < array.length ; i++) {
@@ -58,9 +56,7 @@ public class CollectionImpl implements Collection {
                 z = i;
             }
         }
-//        System.out.println("z = " + z);
-//        System.out.println("pointer " + pointer);
-//        System.out.println("array " + array.length);
+
         if (z >= 0) {
             if (array.length > (z +1) ) {
                 for (int i = z; i < pointer; i++)
@@ -78,21 +74,22 @@ public class CollectionImpl implements Collection {
         } else {
             System.out.println("В коллекции нет таких значений");
         }
+        return true;
     }
 
     @Override
-    public void getIndex(int index) {
+    public String getIndex(int index) {
 
         if (index <= pointer) {
             System.out.println("Ячейка " + index + " содержит значение " + array[index]);
         } else {
             System.out.println("Невозможно вывести значение ячейки " + index + " поскольку текущая длина массива " + array.length);
         }
-
+        return "Some";
     }
 
     @Override
-    public void contain(String o) {
+    public boolean contain(String o) {
 
         int z = -1;
         for (int i = 0; i < pointer ; i++) {
@@ -105,35 +102,42 @@ public class CollectionImpl implements Collection {
         } else {
             System.out.println("В коллекции нет таких значений");
         }
+        return true;
     }
 
     @Override
-    public void  eequals (Object str) {
+    public boolean  equals (String[] str) {
 
-        ArrayList<Object> list = new ArrayList<>(Arrays.asList(array));
-
-        System.out.println("Тестоая  коллекция " + str);
-        System.out.println("Рабочая  коллекция " + list);
-
-        if (list.equals(str)) {
-            System.out.println("Коллекции одинаковы");
-        } else {
-            System.out.println("Коллекции разные");
+        int count = 0;
+        for (int i = 0; i < array.length ; i++) {
+            for (int j = 0; j < str.length ; j++) {
+                if (array[i] == null ||  str[j] == null) {
+                    continue ;
+                }
+                if (array[i].equals(str[j])) {
+                    System.out.println("Совпало значение  " + array[i]);
+                    count++;
+                }
+            }
         }
+        System.out.println("Всего совпадений  " + count );
+        return false;
     }
 
     @Override
-    public void clear() {
+    public boolean clear() {
 
         Object[] arr = new Object[1];
         arr[0] = null;
         array = arr;
         pointer = 0;
+        return true;
     }
 
     @Override
-    public void size() {
+    public int size() {
         System.out.println("Размер коллекции в данный момент " + pointer );
+        return pointer;
     }
 
     private void resize(int newLength) {

@@ -1,9 +1,7 @@
 package lesson_008;
 
 import java.util.*;
-
 public class Main {
-
     public static void main(String[] args) {
 
         Collection collection = new CollectionImpl();
@@ -47,7 +45,7 @@ public class Main {
                 case 4: collection.delete(userValue()); break;
                 case 5: collection.getIndex(userIndex()); break;
                 case 6: collection.contain(userValue()); break;
-                case 7:; collection.eequals(testCol());break;
+                case 7:; collection.equals(testCol());break;
                 case 8: collection.clear(); break;
                 case 9: collection.size(); break;
                 case 10: System.out.println("Завершение работы"); return;
@@ -59,7 +57,6 @@ public class Main {
     public static int userIndex() {
 
         System.out.println("Введите номер коллекции");
-
         Scanner scan = new Scanner(System.in);
         int n = 0;
         while (true) {
@@ -76,18 +73,22 @@ public class Main {
     }
 
     public static String userValue() {
+
         System.out.println("Введите значение коллекции");
         Scanner sc1 = new Scanner(System.in);
         String str = sc1.nextLine();
         return str;
     }
 
-    public static List<String> testCol() {
+    public static String[] testCol() {
 
-        List<String> test = new ArrayList<>();
-        for (int i = 1; i <17 ; i++) {
-            test.add(Integer.toString(i));
+        String[] test = new String[10];
+
+        for (int i = 0; i < test.length; i++) {
+            int rand = (int) ((Math.random() * 100));
+            String arr = Integer.toString(rand);
+            test[i] = arr;
         }
-        return  test;
+        return test;
     }
 }
