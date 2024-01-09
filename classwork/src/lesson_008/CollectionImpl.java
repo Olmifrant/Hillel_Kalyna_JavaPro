@@ -1,8 +1,6 @@
 package lesson_008;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class CollectionImpl implements Collection {
 
@@ -104,7 +102,7 @@ public class CollectionImpl implements Collection {
     }
 
     @Override
-    public boolean  equals (String[] str) {
+    public boolean equals (String[] str) {
 
         int count = 0;
         for (int i = 0; i < array.length ; i++) {

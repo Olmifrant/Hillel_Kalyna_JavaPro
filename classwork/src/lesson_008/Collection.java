@@ -8,7 +8,7 @@ public interface Collection  {
     boolean delete (String o);
     String  getIndex  (int index);
     boolean contain (String o);
-     boolean equals (String[] str);
+    boolean equals (String[] str);
     boolean clear();
     int  size();
 
