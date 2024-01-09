@@ -9,7 +9,7 @@ public class Hw11_02 {
 
     public static void main(String[] args) {
 
-        String[] array = new String[15];
+        String[] array = new String[20];
 
         for (int i = 0; i < array.length; i++) {
             String arr = Integer.toString(i);
@@ -22,7 +22,7 @@ public class Hw11_02 {
 
  public static List toList(String[] str){
 
-        LinkedList list = new LinkedList(Arrays.asList(str));
+        List list = new ArrayList(Arrays.asList(str));
 
      return list;
  }
