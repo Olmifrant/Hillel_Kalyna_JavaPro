@@ -8,7 +8,7 @@ public class Hw11_04 {
 
         ArrayList <String> list1 = new ArrayList<>();
 
-        int size = 1000;
+        int size = 100;
         for (int i = 0; i < size ; i++) {
             int n = (int) ((Math.random() * 5) +1);
             switch (n){
