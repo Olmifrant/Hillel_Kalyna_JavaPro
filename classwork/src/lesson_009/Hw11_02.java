@@ -4,6 +4,9 @@ import java.util.*;
 
 public class Hw11_02 {
 
+//    Створити метод toList, що приймає на вхід цілісний масив довільної довжини.
+//    Конвертувати масив у список відповідного типу даних та повернути з методу.
+
     public static void main(String[] args) {
 
         String[] array = new String[15];

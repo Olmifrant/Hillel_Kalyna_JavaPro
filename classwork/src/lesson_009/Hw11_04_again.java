@@ -4,6 +4,11 @@ import java.util.*;
 
 public class Hw11_04_again {
 
+//    Створити метод findOccurance, що приймає на вхід рядковий список як параметр.
+//    Список заповнений довільними словами 10-20 штук, які можуть повторюватись
+//    у необмеженій кількості. Обчислити скільки разів трапляється кожне слово.
+//    Результат повернути у вигляді списку структур, що описують повторення
+//    кожного окремого взятого слова.
 
     public static void main(String[] args) {
 
@@ -20,9 +25,7 @@ public class Hw11_04_again {
                 case 5: list1.add("Гусь"); break;
             }
         }
-
         System.out.println(findOccurance(list1));
-
     }
 
     public static HashMap findOccurance(List list) {
@@ -50,7 +53,7 @@ public class Hw11_04_again {
                 }
             }
             //System.out.println("Значение " + uniqList[i] + " повторяется " + count + " раз");
-            map.put(count, uniqList[i] );
+            map.put(count, uniqList[i]);
         }
         return map;
     }
