@@ -15,13 +15,12 @@ class Phonebook {
         }
     }
 
-    public void list() {
+    public List list() {
 
         if (this.contacts.isEmpty()) {
-            System.out.println("Справочник пуст");
-        } else {
-          System.out.println(contacts);
+            //System.out.println("Справочник пуст");
         }
+        return contacts;
     }
 
     public void add(String name, String phone) {
@@ -31,46 +30,42 @@ class Phonebook {
         contacts.add(Arrays.toString(record.test()));
     }
 
-    public void find(String name) {
+    public List find(String name) {
 
         String[] arr = new String[contacts.size()];
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = contacts.get(i);
         }
-        int count = 0;
+        List list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].toString().contains(name.toString())) {
-                System.out.println(arr[i]);
-                count++;
+
+                list.add(arr[i]);
+                //System.out.println(arr[i]);
                 break;
             }
         }
-        if (count == 0) {
-            System.out.println("В справочнике нет таких контактов");
-        }
+        return list;
     }
 
 
-    public void findAll(String name) {
+    public List findAll(String name) {
 
         String[] arr = new String[contacts.size()];
+        List list = new ArrayList();
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = contacts.get(i);
         }
-        int count = 0;
+
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].toString().contains(name.toString())) {
-                System.out.println(arr[i]);
-                count++;
+                list.add(arr[i]);
+
             }
         }
-        if (count == 0) {
-            System.out.println("В справочнике нет таких контактов");
-        } else {
-            System.out.println("Всего найдено " + count + " контаков");
-        }
+      return list;
     }
 
 }

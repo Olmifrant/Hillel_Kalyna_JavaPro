@@ -30,10 +30,10 @@ public class Main {
             }
 
             switch (choice) {
-                case 1: phonebook.list(); break;
-                case 2: phonebook.add(user(),userPhone()); break;
-                case 3: phonebook.find(user()); break;
-                case 4: phonebook.findAll(user()); break;
+                case 1: System.out.println(phonebook.list()); break;
+                case 2: phonebook.add(user(),userPhone());  break;
+                case 3: System.out.println(phonebook.find(user())); break;
+                case 4: System.out.println(phonebook.findAll(user())); ; break;
                 case 5: System.out.println("Завершение работы"); return;
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
             }
