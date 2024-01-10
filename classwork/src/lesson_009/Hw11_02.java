@@ -20,11 +20,11 @@ public class Hw11_02 {
         System.out.println(" List  " + toList(array));
     }
 
- public static List toList(String[] str){
+    public static List toList(String[] str) {
 
         List list = new ArrayList(Arrays.asList(str));
 
-     return list;
- }
+        return list;
+    }
 }
 
