@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
 
         Phonebook phonebook = new Phonebook();
-        //Record rec = new Record();
 
 
         while (true) {
@@ -16,10 +15,9 @@ public class Main {
             System.out.println("Выберете вариант из списка: ");
             System.out.println("01. Показать весь справочник");
             System.out.println("02. Добавить контакт");
-            System.out.println("03. Показать контакт");
-            System.out.println("04. Редактировать контакт");
-            System.out.println("05. Удалить контакт");
-            System.out.println("6. Завершить работу");
+            System.out.println("03. Найти и показать контакт (одно совпадение)");
+            System.out.println("04. Найти и показать контакт (все совпадения)");
+            System.out.println("05. Завершить работу");
 
             Scanner scan = new Scanner(System.in);
             int choice = 0;
@@ -37,10 +35,9 @@ public class Main {
             switch (choice) {
                 case 1: phonebook.list(); break;
                 case 2: phonebook.add(user(),userPhone()); break;
-                case 3: phonebook.show(user()); break;
-                case 4: phonebook.edit(); break;
-                case 5: phonebook.delete(); break;
-                case 6: System.out.println("Завершение работы"); return;
+                case 3: phonebook.find(user()); break;
+                case 4: phonebook.findAll(user()); break;
+                case 5: System.out.println("Завершение работы"); return;
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
             }
         }
