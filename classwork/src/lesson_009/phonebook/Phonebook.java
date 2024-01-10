@@ -12,13 +12,13 @@ class Phonebook {
             contacts.add("Marcus 0951304574");
             contacts.add("Ali 0638084228");
             contacts.add("Ali 0685217485");
+            contacts.add("Ali 0951304585");
         }
     }
 
     public List list() {
 
         if (this.contacts.isEmpty()) {
-            //System.out.println("Справочник пуст");
         }
         return contacts;
     }
@@ -37,7 +37,8 @@ class Phonebook {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = contacts.get(i);
         }
-        List list = new ArrayList<>();
+
+        List list = new ArrayList();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].toString().contains(name.toString())) {
 
@@ -49,16 +50,15 @@ class Phonebook {
         return list;
     }
 
-
     public List findAll(String name) {
 
         String[] arr = new String[contacts.size()];
-        List list = new ArrayList();
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = contacts.get(i);
         }
 
+        List list = new ArrayList();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].toString().contains(name.toString())) {
                 list.add(arr[i]);
