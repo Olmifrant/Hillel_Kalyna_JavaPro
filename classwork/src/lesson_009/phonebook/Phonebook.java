@@ -5,12 +5,17 @@ import java.util.*;
 
 class Phonebook {
 
-    HashMap<String, Integer> contacts = new HashMap<>();
+    HashMap<String, String> contacts = new HashMap<>();
+    {{
+        contacts.put("Tony","06380842201");
+        contacts.put("Ezekial", "0635318574");
+        contacts.put("Marcus", "0951304574");
+    }}
 
 
-    Phonebook() {
-        this.contacts = new HashMap<>();
-    }
+//    Phonebook() {
+//        this.contacts = new HashMap<>();
+//    }
 
 
     public void list()
@@ -27,7 +32,7 @@ class Phonebook {
     }
 
 
-    public void add(String name, int num) {
+    public void add(String name, String num) {
 
         contacts.put(name,num);
 

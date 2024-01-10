@@ -1,13 +1,14 @@
 package lesson_009.phonebook;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        //Phonebook phonebook = new Phonebook();
-        Record record = new Record();
+        Phonebook phonebook = new Phonebook();
+
 
         while (true) {
             System.out.println();
@@ -34,7 +35,7 @@ public class Main {
 
             switch (choice) {
                 case 1: phonebook.list(); break;
-                case 2: phonebook.add(userValue(), userIndex()); break;
+                case 2: phonebook.add(userValue(),userIndex()); break;
                 case 3: phonebook.show(); break;
                 case 4: phonebook.edit(); break;
                 case 5: phonebook.delete(); break;
@@ -44,7 +45,7 @@ public class Main {
         }
     }
 
-    public static int userIndex() {
+    public static String userIndex() {
 
         System.out.println("Введите номер");
         Scanner scan = new Scanner(System.in);
@@ -59,7 +60,8 @@ public class Main {
                 scan.nextLine();
             }
         }
-        return n;
+        String st = Integer.toString(n);
+        return st;
     }
 
     public static String userValue() {
