@@ -10,6 +10,7 @@ class Phonebook {
             contacts.add("Tony 06380842201");
             contacts.add("Ezekiel 0635318574");
             contacts.add("Marcus 0951304574");
+            contacts.add("Marcus 0501254785");
             contacts.add("Ali 0638084228");
             contacts.add("Ali 0685217485");
             contacts.add("Ali 0951304585");

@@ -1,7 +1,6 @@
 package lesson_009.phonebook;
 
 public class Record {
-
     private String name;
     private String phone;
 

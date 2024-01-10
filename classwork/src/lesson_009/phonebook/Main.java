@@ -38,6 +38,7 @@ public class Main {
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
             }
         }
+
     }
 
     public static String userPhone() {
