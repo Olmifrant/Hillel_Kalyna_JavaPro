@@ -1,21 +1,15 @@
 package lesson_009.phonebook;
 
-
 import java.util.*;
-
 class Phonebook {
 
-    HashMap<String, String> contacts = new HashMap<>();
-    {{
-        contacts.put("Tony","06380842201");
-        contacts.put("Ezekial", "0635318574");
-        contacts.put("Marcus", "0951304574");
-    }}
-
-
-//    Phonebook() {
-//        this.contacts = new HashMap<>();
-//    }
+    List<String> contacts = new ArrayList<>();
+//    {{
+//        contacts.add("Tony 06380842201");
+//        contacts.add("Ezekial 0635318574");
+//        contacts.add("Marcus 0951304574");
+//
+//    }}
 
 
     public void list()
@@ -26,17 +20,33 @@ class Phonebook {
         }
         else
         {
-           System.out.println(contacts);
+           //System.out.println(contacts);
+
+           String[] arr = new String[contacts.size()];
+           //System.out.println(lis);
+
+            for (int i = 0; i <arr.length ; i++) {
+                arr[i] = contacts.get(i);
+
+            }
+            //System.out.println(Arrays.toString(arr));
 
         }
     }
 
 
-    public void add(String name, String num) {
+    Record record = new Record();
+    public void add() {
 
-        contacts.put(name,num);
+        Record record = new Record();
+        //System.out.println(Arrays.toString(record.test()));
+
+        contacts.add(Arrays.toString(record.test()));
+
 
     }
+
+
     public void show() { }
     public void edit() { }
     public void delete() { }

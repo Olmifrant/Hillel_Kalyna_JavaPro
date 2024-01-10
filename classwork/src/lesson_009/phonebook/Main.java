@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         Phonebook phonebook = new Phonebook();
+        Record rec = new Record();
 
 
         while (true) {
@@ -35,7 +36,7 @@ public class Main {
 
             switch (choice) {
                 case 1: phonebook.list(); break;
-                case 2: phonebook.add(userValue(),userIndex()); break;
+                case 2: phonebook.add(); break;
                 case 3: phonebook.show(); break;
                 case 4: phonebook.edit(); break;
                 case 5: phonebook.delete(); break;
@@ -43,32 +44,5 @@ public class Main {
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
             }
         }
-    }
-
-    public static String userIndex() {
-
-        System.out.println("Введите номер");
-        Scanner scan = new Scanner(System.in);
-        int n;
-        while (true) {
-            if (scan.hasNextInt()) {
-                n = scan.nextInt();
-                scan.nextLine();
-                break;
-            } else {
-                System.out.println("Только цифры пожалуйста!");
-                scan.nextLine();
-            }
-        }
-        String st = Integer.toString(n);
-        return st;
-    }
-
-    public static String userValue() {
-
-        System.out.println("Введите имя");
-        Scanner sc1 = new Scanner(System.in);
-        String str = sc1.nextLine();
-        return str;
     }
 }
