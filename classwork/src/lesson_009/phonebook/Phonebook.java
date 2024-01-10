@@ -12,35 +12,23 @@ class Phonebook {
             contacts.add("Marcus 0951304574");
             contacts.add("Ali 0638084228");
             contacts.add("Ali 0685217485");
-
         }
     }
-
 
     public void list() {
+
         if (this.contacts.isEmpty()) {
-            System.out.println("Пусто");
+            System.out.println("Справочник пуст");
         } else {
-
-            String[] arr = new String[contacts.size()];
-
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = contacts.get(i);
-
-            }
-            System.out.println(Arrays.toString(arr));
-
+          System.out.println(contacts);
         }
     }
 
-    //Record record = new Record();
     public void add(String name, String phone) {
 
         Record record = new Record(name, phone);
-        //System.out.println(Arrays.toString(record.test()));
 
         contacts.add(Arrays.toString(record.test()));
-
     }
 
     public void find(String name) {
@@ -61,7 +49,6 @@ class Phonebook {
         if (count == 0) {
             System.out.println("В справочнике нет таких контактов");
         }
-
     }
 
 

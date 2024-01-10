@@ -1,14 +1,11 @@
 package lesson_009.phonebook;
 
-import java.util.Arrays;
 import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
 
         Phonebook phonebook = new Phonebook();
-
 
         while (true) {
             System.out.println();
@@ -43,15 +40,14 @@ public class Main {
         }
     }
 
-
     public static String userPhone() {
 
         System.out.println("Введите номер");
         Scanner scan = new Scanner(System.in);
-        int n;
+        long n;
         while (true) {
-            if (scan.hasNextInt()) {
-                n = scan.nextInt();
+            if (scan.hasNextLong()) {
+                n = scan.nextLong();
                 scan.nextLine();
                 break;
             } else {
@@ -59,7 +55,7 @@ public class Main {
                 scan.nextLine();
             }
         }
-        String st = Integer.toString(n);
+        String st = Long.toString(n);
         return st;
     }
 
