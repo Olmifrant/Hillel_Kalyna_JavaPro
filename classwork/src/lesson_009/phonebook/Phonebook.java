@@ -29,25 +29,28 @@ class Phonebook {
                 arr[i] = contacts.get(i);
 
             }
-            //System.out.println(Arrays.toString(arr));
+            System.out.println(Arrays.toString(arr));
 
         }
     }
 
+    //Record record = new Record();
+    public void add(String name, String phone) {
 
-    Record record = new Record();
-    public void add() {
-
-        Record record = new Record();
+        Record record = new Record(name,phone);
         //System.out.println(Arrays.toString(record.test()));
 
         contacts.add(Arrays.toString(record.test()));
 
-
     }
 
+    public void show(String name) {
 
-    public void show() { }
+
+
+
+
+    }
     public void edit() { }
     public void delete() { }
 
