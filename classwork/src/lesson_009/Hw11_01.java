@@ -29,7 +29,7 @@ public class Hw11_01 {
         Scanner sc1 = new Scanner(System.in);
         String str = sc1.nextLine();
 
-        System.out.println("Элемент " + str + " встречается в коллекции " + countOccurance(list1, str));
+        System.out.println("Элемент " + str + " встречается в коллекции " + countOccurance(list1, str) + " раз");
         //countOccurance(list1, str);
 
     }

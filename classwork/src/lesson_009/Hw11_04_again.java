@@ -31,32 +31,21 @@ public class Hw11_04_again {
     public static HashMap findOccurance(List list) {
 
         Set<String> set = new HashSet<>(list);
-        ArrayList<String> setUni = new ArrayList<>(set);
 
-        String[] uniqList = new String[set.size()];
-        for (int i = 0; i < uniqList.length; i++) {
-            uniqList[i] = setUni.get(i);
-        }
+        HashMap<Integer, String> map = new HashMap<>();
 
-        String[] any = new String[list.size()];
-        for (int i = 0; i < any.length; i++) {
-            any[i] = list.get(i).toString();
-        }
-
-        HashMap<Integer , String> map = new HashMap<>();
-
-        for (int i = 0; i < uniqList.length; i++) {
+        for (Object str1 : set) {
             int count = 0;
-            for (int j = 0; j < any.length; j++) {
-                if (uniqList[i].equals(any[j])) {
-                    count++;
-                }
-            }
-            //System.out.println("Значение " + uniqList[i] + " повторяется " + count + " раз");
-            map.put(count, uniqList[i]);
+             for (Object str2 : list) {
+                 if (str1.equals(str2)) {
+                     count++;
+                 }
+             }
+            map.put(count, (String) str1);
         }
         return map;
     }
+
 }
 
 
