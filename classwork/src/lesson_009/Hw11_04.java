@@ -29,30 +29,19 @@ public class Hw11_04 {
 
     public static void calcOccurance (List list){
 
+
         Set<String> set = new HashSet<>(list);
-        ArrayList<String> setUni = new ArrayList<>(set);
+        System.out.println(list);
 
-        String[] uniqList = new String[set.size()];
-        for (int i = 0; i < uniqList.length ; i++) {
-            uniqList[i]= setUni.get(i);
-        }
-
-        String[] any = new String[list.size()];
-        for (int i = 0; i < any.length ; i++) {
-            any[i] = list.get(i).toString();
-        }
-
-        System.out.println("Полный список " + Arrays.toString(any));
-        System.out.println("Уникальный список " + Arrays.toString(uniqList));
-
-        for (int i = 0; i <uniqList.length ; i++) {
+        for (String str1 : set) {
             int count = 0;
-            for (int j = 0; j < any.length ; j++) {
-                if (uniqList[i].equals(any[j])){
+            for (Object str2 : list ) {
+                if (str1.equals(str2)) {
                     count++;
                 }
             }
-            System.out.println("Значение " + uniqList[i] + " повторяется " + count + " раз");
+            System.out.println("Значение " + str1 + " повторяется " + count + " раз");
+
         }
     }
 }
