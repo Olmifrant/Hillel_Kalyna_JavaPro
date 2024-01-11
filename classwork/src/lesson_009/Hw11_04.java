@@ -29,7 +29,6 @@ public class Hw11_04 {
 
     public static void calcOccurance (List list){
 
-
         Set<String> set = new HashSet<>(list);
         System.out.println(list);
 

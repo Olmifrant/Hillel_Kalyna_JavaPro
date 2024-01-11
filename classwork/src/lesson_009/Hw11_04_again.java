@@ -14,7 +14,7 @@ public class Hw11_04_again {
 
         List<String> list1 = new ArrayList<>();
 
-        int size = 20;
+        int size = 50;
         for (int i = 0; i < size ; i++) {
             int n = (int) ((Math.random() * 5) +1);
             switch (n){
@@ -33,19 +33,23 @@ public class Hw11_04_again {
         Set<String> set = new HashSet<>(list);
         System.out.println(list);
 
-        HashMap<Integer, String> map = new HashMap<>();
+        HashMap<String, Integer> map = new HashMap<>();
+        List list1 = new ArrayList();
 
         for (String str1 : set) {
             int count = 0;
+
              for (Object str2 : list ) {
                  if (str1.equals(str2)) {
                      count++;
                  }
              }
-            map.put(count, str1);
+
+            map.put(str1,count);
 
         }
-
+//        list1.add(map);
+//        System.out.println(list1);
         return map;
     }
 
