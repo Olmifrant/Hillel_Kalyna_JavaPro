@@ -1,7 +1,6 @@
 package lesson_009;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Hw11_01 {
@@ -12,7 +11,7 @@ public class Hw11_01 {
 
     public static void main(String[] args) {
 
-        ArrayList <String> list1 = new ArrayList<>();
+        ArrayList<String> list1 = new ArrayList<>();
 
         int size = 20;
         for (int i = 0; i < size ; i++) {
@@ -30,27 +29,19 @@ public class Hw11_01 {
         Scanner sc1 = new Scanner(System.in);
         String str = sc1.nextLine();
 
-        countOccurance(list1, str);
+        System.out.println("Элемент " + str + " встречается в коллекции " + countOccurance(list1, str));
+        //countOccurance(list1, str);
 
     }
-    public static void countOccurance (List list, String str){
 
-        String [] arr = new String[list.size()];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = list.get(i).toString().toUpperCase();
-        }
+    public static int countOccurance(ArrayList list, String str) {
 
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].equals(str.toUpperCase())){
+
+        for (Object st : list)
+            if (str.equals(st)) {
                 count++;
             }
-        }
-
-        if( count > 0){
-            System.out.println("Элемент " + str + " встречается " + count + " раз");
-        }else {
-            System.out.println("Такого элемента нет в коллекции");
-        }
+        return count;
     }
 }
