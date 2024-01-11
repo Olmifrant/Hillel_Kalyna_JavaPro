@@ -2,7 +2,6 @@ package lesson_009.phonebook;
 
 import java.util.Scanner;
 public class Main {
-
     public static void main(String[] args) {
 
         Phonebook phonebook = new Phonebook();

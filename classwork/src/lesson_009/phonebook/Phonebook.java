@@ -1,8 +1,6 @@
 package lesson_009.phonebook;
-
 import java.util.*;
 class Phonebook {
-
     List<String> contacts = new ArrayList<>();
 
     {
