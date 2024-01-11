@@ -19,8 +19,6 @@ class Phonebook {
 
     public List list() {
 
-        if (this.contacts.isEmpty()) {
-        }
         return contacts;
     }
 
@@ -33,18 +31,11 @@ class Phonebook {
 
     public List find(String name) {
 
-        String[] arr = new String[contacts.size()];
-
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = contacts.get(i);
-        }
-
         List list = new ArrayList();
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].toString().contains(name.toString())) {
 
-                list.add(arr[i]);
-                //System.out.println(arr[i]);
+        for (String st : contacts){
+            if (st.toUpperCase().contains(name.toUpperCase())){
+                list.add(st);
                 break;
             }
         }
@@ -53,17 +44,11 @@ class Phonebook {
 
     public List findAll(String name) {
 
-        String[] arr = new String[contacts.size()];
-
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = contacts.get(i);
-        }
-
         List list = new ArrayList();
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].toString().contains(name.toString())) {
-                list.add(arr[i]);
 
+        for (String st : contacts){
+            if (st.toUpperCase().contains(name.toUpperCase())){
+                list.add(st);
             }
         }
       return list;

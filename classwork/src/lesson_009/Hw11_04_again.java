@@ -12,9 +12,9 @@ public class Hw11_04_again {
 
     public static void main(String[] args) {
 
-        ArrayList<String> list1 = new ArrayList<>();
+        List<String> list1 = new ArrayList<>();
 
-        int size = 100;
+        int size = 20;
         for (int i = 0; i < size ; i++) {
             int n = (int) ((Math.random() * 5) +1);
             switch (n){
@@ -31,18 +31,21 @@ public class Hw11_04_again {
     public static HashMap findOccurance(List list) {
 
         Set<String> set = new HashSet<>(list);
+        System.out.println(list);
 
         HashMap<Integer, String> map = new HashMap<>();
 
-        for (Object str1 : set) {
+        for (String str1 : set) {
             int count = 0;
-             for (Object str2 : list) {
+             for (Object str2 : list ) {
                  if (str1.equals(str2)) {
                      count++;
                  }
              }
-            map.put(count, (String) str1);
+            map.put(count, str1);
+
         }
+
         return map;
     }
 

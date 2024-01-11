@@ -1,5 +1,7 @@
 package lesson_009.phonebook;
 
+import java.util.ArrayList;
+
 public class Record {
     private String name;
     private String phone;
@@ -9,11 +11,11 @@ public class Record {
         this.phone = phone;
     }
 
-    public String[] test (){
+    public Object[] test (){
 
-        String[] str = new String[2];
-        str[0] = name;
-        str[1] = phone;
-        return str;
+        ArrayList<String> list = new ArrayList();
+        list.add(name);
+        list.add(phone);
+        return new ArrayList[]{list};
     }
 }
