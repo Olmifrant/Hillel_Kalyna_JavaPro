@@ -1,26 +1,46 @@
 package lesson_010.Hw_12;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class FileNavigator {
 
-    HashMap<String,Object> map = new HashMap<>();
+    HashMap<String,List> map = new HashMap<>();
 
 
-    public void add (String paht, String name, int size) {
+    public void add (String name, int size, String paht) {
 
-        FileData fileData = new FileData(paht, name, size);
+        FileData file = new FileData(name, size, paht);
 
-        List<String> test = new ArrayList<>();
-        test.add((String) fileData.File().get(1));
-        test.add((String) fileData.File().get(2));
+        List<String> input = new ArrayList<>(file.File());
+        List<List> test = new ArrayList<>();
 
-        map.put((String) fileData.File().get(0),test);
+        test.add(Collections.singletonList(input.get(0)));
+        test.add(Collections.singletonList(input.get(1)));
 
+        //System.out.println(input);
+//        System.out.println(input.get(0));
+        //System.out.println(input.get(2));
+        //map.put(input.get(2),test);
+
+
+
+        if (map.containsKey(input.get(2))){
+
+            List<List> strings = new ArrayList<>(map.get(input.get(2)));
+            strings.add(test);
+            map.put(input.get(2),strings);
+
+        }else {
+            map.put(input.get(2),test);
+
+        }
+
+
+
+        //System.out.println(map.size());
+
+        //System.out.println(input);
         //System.out.println(map);
         //System.out.println(test);
         //System.out.println(map.get(String.format("D://Media//Photo//2019//")));
@@ -39,5 +59,9 @@ public class FileNavigator {
         //System.out.println(map.get(String.format("D://Media//Photo//2019//")));
     }
 
+
+    public void print(){
+        System.out.println(map);
+    }
 
 }
