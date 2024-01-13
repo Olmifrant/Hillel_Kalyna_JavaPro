@@ -1,6 +1,5 @@
 package lesson_010.Hw_12;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class FileNavigator {
@@ -18,50 +17,45 @@ public class FileNavigator {
         test.add(Collections.singletonList(input.get(0)));
         test.add(Collections.singletonList(input.get(1)));
 
-        //System.out.println(input);
-//        System.out.println(input.get(0));
-        //System.out.println(input.get(2));
-        //map.put(input.get(2),test);
-
-
-
         if (map.containsKey(input.get(2))){
 
             List<List> strings = new ArrayList<>(map.get(input.get(2)));
-            strings.add(test);
+
+            strings.add(Collections.singletonList(input.get(0)));
+            strings.add(Collections.singletonList(input.get(1)));
             map.put(input.get(2),strings);
 
         }else {
             map.put(input.get(2),test);
 
         }
-
-
-
-        //System.out.println(map.size());
-
-        //System.out.println(input);
-        //System.out.println(map);
-        //System.out.println(test);
-        //System.out.println(map.get(String.format("D://Media//Photo//2019//")));
-
     }
 
-    public void find (){
+    public List find (String path){
 
         ArrayList<String> sd = new ArrayList<>();
-        for (int i = 0; i < map.size(); i++) {
-            //System.out.println(map.get(String.format("D://Media//Photo//2019//")));
-            //sd.add((String) map.get(String.format("D://Media//Photo//2019//")));
-
-        }
-        System.out.println(sd);
-        //System.out.println(map.get(String.format("D://Media//Photo//2019//")));
+        sd.addAll(map.get(path));
+        return sd;
     }
 
 
-    public void print(){
-        System.out.println(map);
+    public List filterBuSize(int size){
+
+        List<Object> listrr = new ArrayList<>();
+
+        for (Map.Entry<String, List> entry : map.entrySet()) {
+            List value = entry.getValue();
+            listrr.addAll(value);
+        }
+        System.out.println(listrr);
+
+
+        return null;
+    }
+
+
+    public Map print(){
+       return map;
     }
 
 }

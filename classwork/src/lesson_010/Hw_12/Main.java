@@ -1,12 +1,14 @@
 package lesson_010.Hw_12;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
         FileNavigator navigator = new FileNavigator();
 
-        int size = 10;
+        int size = 20;
 
         for (int i = 0; i < size; i++) {
 
@@ -33,31 +35,52 @@ public class Main {
                     case 5: nam01 = ("Халки"); break;
                 }
 
-//            int f = (int) ((Math.random() * 5) +1);
-//            switch (f){
-//                case 1: nam02 = ("01"); break;
-//                case 2: nam02 = ("02"); break;
-//                case 3: nam02 = ("03"); break;
-//                case 4: nam02 = ("04"); break;
-//                case 5: nam02 = ("05"); break;
-//            }
 
             int f = (int) ((Math.random() * 100));
-                nam02 = String.valueOf(f);
+            nam02 = String.valueOf(f);
 
 
+            String nam = nam01 + nam02;
 
-            String nam = nam01+nam02;
+            siz = (int) (((Math.random() * 1000)));
 
-                siz =  (int) (((Math.random() * 1000) + 2000)) ;
-
-            //System.out.println(nam + siz + pat);
             navigator.add(nam, siz, pat);
 
         }
 
+        while (true) {
+            System.out.println();
+            System.out.println("Выберете вариант из списка: ");
+            System.out.println("01. Показать ");
+            System.out.println("02. Обьем");
+            System.out.println("03. Сорт");
+            System.out.println("04. Удалить");
+            System.out.println("05. Завершить работу");
 
-        navigator.print();
+            Scanner scan = new Scanner(System.in);
+            int choice = 0;
+            while (true) {
+                if (scan.hasNextInt()) {
+                    choice = scan.nextInt();
+                    scan.nextLine();
+                    break;
+                } else {
+                    System.out.println("Только цифры пожалуйста!");
+                    scan.nextLine();
+                }
+            }
+
+            switch (choice) {
+                case 1: System.out.println(navigator.print()); break;
+                case 2: System.out.println(navigator.find("D://Media//Photo//2022//")); break;
+                case 3: System.out.println(navigator.filterBuSize(500)); break;
+                case 4: break;
+                case 5: System.out.println("Завершение работы"); return;
+                default: System.out.println("Выберите вариант из списка пожалуйста!");
+            }
+        }
+
+
 
     }
 }
