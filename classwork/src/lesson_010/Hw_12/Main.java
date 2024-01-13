@@ -37,7 +37,7 @@ public class Main {
 
 
             int f = (int) ((Math.random() * 100));
-            nam02 = String.valueOf(f);
+            nam02 = String.valueOf(f+ ".jpg");
 
 
             String nam = nam01 + nam02;
