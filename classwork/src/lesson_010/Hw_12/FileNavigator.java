@@ -41,16 +41,18 @@ public class FileNavigator {
 
     public List filterBuSize(int size){
 
-        List<Object> listrr = new ArrayList<>();
+        List<List> list = new ArrayList<>();
 
         for (Map.Entry<String, List> entry : map.entrySet()) {
             List value = entry.getValue();
-            listrr.addAll(value);
+            list.addAll(value);
         }
-        System.out.println(listrr);
+        System.out.println(list);
+        System.out.println(list.get(1));
 
 
-        return null;
+            return null;
+
     }
 
 

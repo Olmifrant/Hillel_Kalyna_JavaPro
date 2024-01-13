@@ -1,7 +1,6 @@
 package lesson_010.Hw_12;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class FileData {
