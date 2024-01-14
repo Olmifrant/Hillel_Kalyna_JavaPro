@@ -1,7 +1,7 @@
 package lesson_010.Hw_12;
 
-import javax.management.ObjectName;
 import java.util.*;
+
 public class FileNavigator {
     private HashMap<String, List<List>> map = new HashMap<>();
 
@@ -65,22 +65,27 @@ public class FileNavigator {
     public List sortBySize() {
 
         List<List> list = new ArrayList<>();
-//        List<List> rezult = new ArrayList<>();
+
         for (Map.Entry<String, List<List>> entry : map.entrySet()) {
             list.addAll(entry.getValue());
         }
 
-        System.out.println(list);
+        Map<Integer,List> map2 = new TreeMap<>();
+        for (int i = 0; i < list.size(); i++) {
 
-        Collection <List> listCollection = new TreeSet<>();
+            List <String> list1 = new ArrayList<>();
+            list1.add((String) list.get(i).get(0));
+            list1.add((String) list.get(i).get(1));
+            list1.add((String) list.get(i).get(2));
 
-        System.out.println(listCollection);
+            Integer d = Integer.valueOf((String) list.get(i).get(1));
+            map2.put(d,list1);
+        }
 
-
-
-
-
-
-        return null;
+        List<List> rezult = new ArrayList<>();
+        for (Map.Entry<Integer, List> entry1 : map2.entrySet()) {
+            rezult.addAll(entry1.getValue());
+        }
+        return rezult;
     }
 }

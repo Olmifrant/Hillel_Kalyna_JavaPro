@@ -1,7 +1,6 @@
 package lesson_010.Hw_12;
 
 public class FileData {
-
      String path;
      String name;
       int size;
