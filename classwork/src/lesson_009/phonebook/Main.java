@@ -40,14 +40,14 @@ public class Main {
 
     }
 
-    public static String userPhone() {
+    public static int userPhone() {
 
         System.out.println("Введите номер");
         Scanner scan = new Scanner(System.in);
-        long n;
+        int n;
         while (true) {
             if (scan.hasNextLong()) {
-                n = scan.nextLong();
+                n = scan.nextInt();
                 scan.nextLine();
                 break;
             } else {
@@ -56,7 +56,7 @@ public class Main {
             }
         }
         String st = Long.toString(n);
-        return st;
+        return n;
     }
 
     public static String user() {

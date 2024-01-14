@@ -20,11 +20,10 @@ class Phonebook {
         return contacts;
     }
 
-    public void add(String name, String phone) {
+    public void add(String name, int phone) {
 
-        Record record = new Record(name, phone);
+        contacts.add(String.valueOf(new Record(name,phone)));
 
-        contacts.add(Arrays.toString(record.test()));
     }
 
     public List find(String name) {
