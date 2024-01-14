@@ -8,7 +8,7 @@ public class Main {
 
         FileNavigator navigator = new FileNavigator();
 
-        int size =2000 ;
+        int size =10 ;
 
         for (int i = 0; i < size; i++) {
 
@@ -48,7 +48,8 @@ public class Main {
             System.out.println("02. Показать конкретную папку");
             System.out.println("03. Показать файлы весом до....");
             System.out.println("04. Удалить");
-            System.out.println("05. Завершить работу");
+            System.out.println("05. Сортировать по размеру");
+            System.out.println("06. Завершить работу");
 
             Scanner scan = new Scanner(System.in);
             int choice = 0;
@@ -68,7 +69,7 @@ public class Main {
                 case 2: System.out.println(navigator.find("D://Media//Photo//2022//")); break;
                 case 3: System.out.println(navigator.filterBuSize(500)); break;
                 case 4: navigator.remove("D://Media//Photo//2023//"); break;
-                case 5: System.out.println(41);
+                case 5: navigator.sortBySize(); break;
                 case 6: System.out.println("Завершение работы"); return;
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
             }

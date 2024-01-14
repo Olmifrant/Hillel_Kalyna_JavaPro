@@ -1,20 +1,21 @@
 package lesson_010.Hw_12;
 
+import javax.management.ObjectName;
 import java.util.*;
 public class FileNavigator {
     private HashMap<String, List<List>> map = new HashMap<>();
 
-    public Map print (){
+    public Map print() {
         return map;
     }
 
-    public void add (String name, Integer size, String paht) {
+    public void add(String name, Integer size, String paht) {
 
-        FileData file = new FileData(name, size,paht);
+        FileData file = new FileData(name, size, paht);
 
-        if (map.containsKey(file.path)){
+        if (map.containsKey(file.path)) {
 
-            List <List> listList = new ArrayList<>(map.get(file.path));
+            List<List> listList = new ArrayList<>(map.get(file.path));
             List<String> stringList = new ArrayList<>();
             stringList.add(name);
             stringList.add(String.valueOf(size));
@@ -22,9 +23,9 @@ public class FileNavigator {
             listList.add(stringList);
             map.put(file.path, listList);
 
-        }else{
+        } else {
             List<List> listList = new ArrayList<>();
-            List <String>  stringList = new ArrayList<>();
+            List<String> stringList = new ArrayList<>();
             stringList.add(name);
             stringList.add(String.valueOf(size));
             stringList.add(paht);
@@ -33,7 +34,7 @@ public class FileNavigator {
         }
     }
 
-    public List find (String path) {
+    public List find(String path) {
 
         List<List> list = new ArrayList<>();
         list.addAll(map.get(path));
@@ -44,30 +45,37 @@ public class FileNavigator {
     public List filterBuSize(int size) {
 
         List<List> list = new ArrayList<>();
-        List <List> rezult = new ArrayList<>();
+        List<List> rezult = new ArrayList<>();
         for (Map.Entry<String, List<List>> entry : map.entrySet()) {
             list.addAll(entry.getValue());
         }
         for (int i = 0; i < list.size(); i++) {
             Integer d = Integer.valueOf((String) list.get(i).get(1));
-            if (d< size) {
+            if (d < size) {
                 rezult.add(list.get(i));
             }
         }
         return rezult;
     }
 
-    public void  remove (String path){
+    public void remove(String path) {
         map.remove(path);
     }
 
-    public List sortBySize(){
+    public List sortBySize() {
 
         List<List> list = new ArrayList<>();
-        List <List> rezult = new ArrayList<>();
+//        List<List> rezult = new ArrayList<>();
         for (Map.Entry<String, List<List>> entry : map.entrySet()) {
             list.addAll(entry.getValue());
         }
+
+        System.out.println(list);
+
+        Collection <List> listCollection = new TreeSet<>();
+
+        System.out.println(listCollection);
+
 
 
 
@@ -75,5 +83,4 @@ public class FileNavigator {
 
         return null;
     }
-
 }
