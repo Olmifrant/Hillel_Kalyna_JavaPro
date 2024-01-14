@@ -44,9 +44,9 @@ public class Main {
         while (true) {
             System.out.println();
             System.out.println("Выберете вариант из списка: ");
-            System.out.println("01. Показать все");
+            System.out.println("01. Показать все файлы");
             System.out.println("02. Показать конкретную папку");
-            System.out.println("03. Сорт");
+            System.out.println("03. Показать файлы весом до....");
             System.out.println("04. Удалить");
             System.out.println("05. Завершить работу");
 
@@ -66,9 +66,10 @@ public class Main {
             switch (choice) {
                 case 1: System.out.println(navigator.print()); break;
                 case 2: System.out.println(navigator.find("D://Media//Photo//2022//")); break;
-                case 3: System.out.println(navigator.FilterBuSize(500)); break;
-                case 4: System.out.println("75"); break;
-                case 5: System.out.println("Завершение работы"); return;
+                case 3: System.out.println(navigator.filterBuSize(500)); break;
+                case 4: navigator.remove("D://Media//Photo//2023//"); break;
+                case 5: System.out.println(41);
+                case 6: System.out.println("Завершение работы"); return;
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
             }
        }
