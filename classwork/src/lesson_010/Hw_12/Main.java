@@ -8,7 +8,7 @@ public class Main {
 
         FileNavigator navigator = new FileNavigator();
 
-        int size = 5;
+        int size =10 ;
 
         for (int i = 0; i < size; i++) {
 
@@ -66,7 +66,7 @@ public class Main {
             switch (choice) {
                 case 1: System.out.println(navigator.print()); break;
                 case 2: System.out.println(navigator.find("D://Media//Photo//2022//")); break;
-                case 3: navigator.FilterBuSize(500); break;
+                case 3: System.out.println(navigator.FilterBuSize(500)); break;
                 case 4: System.out.println("75"); break;
                 case 5: System.out.println("Завершение работы"); return;
                 default: System.out.println("Выберите вариант из списка пожалуйста!");
