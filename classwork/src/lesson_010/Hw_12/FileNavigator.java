@@ -49,20 +49,22 @@ public class FileNavigator {
     public List FilterBuSize(int size) {
 
         List<List> list = new ArrayList<>();
-
+        List <List> rezult = new ArrayList<>();
         for (Map.Entry<String, List<List>> entry : map.entrySet()) {
             list.addAll(entry.getValue());
 
         }
 
-        List <List> rezult = new ArrayList<>();
+
         for (int i = 0; i < list.size(); i++) {
             Integer d = Integer.valueOf((String) list.get(i).get(1));
-            if (d < size) {
+            if (d< size) {
                 //System.out.println(list.get(i));
                 rezult.add(list.get(i));
+
             }
         }
+        System.out.println(rezult.size());
         return rezult;
     }
 

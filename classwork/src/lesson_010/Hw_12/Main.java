@@ -8,7 +8,7 @@ public class Main {
 
         FileNavigator navigator = new FileNavigator();
 
-        int size =10 ;
+        int size =2000 ;
 
         for (int i = 0; i < size; i++) {
 
