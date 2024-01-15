@@ -8,7 +8,7 @@ public class Main {
 
         FileNavigator navigator = new FileNavigator();
 
-        int size =1000 ;
+        int size = 20 ;
 
         for (int i = 0; i < size; i++) {
 
@@ -35,7 +35,7 @@ public class Main {
                 }
 
             int f = (int) ((Math.random() * 100));
-            nam02 = String.valueOf(f+ ".jpg");
+            nam02 = f + ".jpg";
             String nam = nam01 + nam02;
             siz = (int) (((Math.random() * 1000)));
             navigator.add(nam, siz, pat);
