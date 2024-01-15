@@ -21,7 +21,7 @@ public class FileData {
         this.name = name;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
