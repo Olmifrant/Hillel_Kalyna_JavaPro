@@ -43,7 +43,7 @@ public class Main {
             }
 
             String name = nam + nam01 + nam02;
-            board.add(name,0);
+            board.add(name);
 
         }
 
@@ -70,7 +70,7 @@ public class Main {
             }
 
             switch (choice) {
-                case 1: board.add(user(), 0); break;
+                case 1: board.add(user()); break;
                 case 2: board.deliverFirst(); break;
                 case 3: board.deliverySome(orderNumm()); break;
                 case 4: board.draw(); break;

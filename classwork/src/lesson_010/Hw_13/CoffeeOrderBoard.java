@@ -6,7 +6,7 @@ public class CoffeeOrderBoard {
 
     NavigableMap <Integer,List<Order>> map =new TreeMap<>();
 
-    public void add (String name, Integer numm) {
+    public void add (String name) {
 
         if (map.isEmpty()) {
             map.put(0, new ArrayList<>());
