@@ -62,6 +62,7 @@ public class ArrayValueCalculator {
         }
     }
 
+
     public static  int  doCalc (String[][] massive) throws MyArraySizeException, MyArrayDataException {
 
         Arrays.stream(massive).map(Arrays::toString).forEach(System.out::println);
@@ -81,3 +82,5 @@ public class ArrayValueCalculator {
             return sum;
     }
 }
+
+
