@@ -1,6 +1,7 @@
 package lesson_12;
 
 public class Fonts {
+
     static int sise = 0;
     String[] rezult = new String[sise];
 

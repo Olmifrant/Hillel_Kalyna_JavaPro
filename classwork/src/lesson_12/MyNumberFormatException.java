@@ -6,8 +6,4 @@ class MyNumberFormatException extends CustomException  {
 
         super(String.format("Символ "  + st +  " не является числои"));
     }
-
-
-
-
 }

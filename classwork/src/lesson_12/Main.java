@@ -1,18 +1,14 @@
 package lesson_12;
 
-
 public class Main {
 
-
-    public static void main(String[] args) throws MyNumberFormatException  {
-
+    public static void main(String[] args) throws  MyNumberFormatException   {
 
         Fonts fonts = new Fonts();
 
         String str = "01234d4444587487445008816789";
 
         check(str);
-
 
         char[] chars = str.toCharArray();
 
@@ -36,15 +32,11 @@ public class Main {
                 case 7:fonts.output(fonts.seven()); break;
                 case 8:fonts.output(fonts.eight()); break;
                 case 9: fonts.output(fonts.nine()); break;
-
             }
-
         }
-
 
         System.out.println();
         ptint(fonts.rezult);
-
 
     }
 
@@ -54,18 +46,14 @@ public class Main {
 
         for (int v = 0; v < chs.length ;v++) {
             try {
-
                 int i1 = Integer.parseInt(String.valueOf(chs[v]));
             } catch (NumberFormatException e) {
                 throw new MyNumberFormatException(chs[v]);
             }
-
         }
-
     }
 
     public static void ptint(String[] string) {
-
 
         for (int i = 0; i < string.length; i++) {
             if (i == string.length - 1) {
@@ -75,5 +63,4 @@ public class Main {
             }
         }
     }
-
 }

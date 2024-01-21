@@ -3,5 +3,6 @@ package lesson_12;
 
     CustomException(String message) {
         super(message);
+
     }
 }
