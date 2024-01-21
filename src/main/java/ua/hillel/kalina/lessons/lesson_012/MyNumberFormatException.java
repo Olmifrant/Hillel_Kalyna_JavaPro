@@ -1,4 +1,4 @@
-package ua.hillel.kalina.lessons.lesson_12;
+package ua.hillel.kalina.lessons.lesson_012;
 
 class MyNumberFormatException extends CustomException  {
 

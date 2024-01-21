@@ -1,6 +1,4 @@
-package ua.hillel.kalina.lessons.lesson_12;
-
-import java.util.Arrays;
+package ua.hillel.kalina.lessons.lesson_012;
 
 public class Main {
 
