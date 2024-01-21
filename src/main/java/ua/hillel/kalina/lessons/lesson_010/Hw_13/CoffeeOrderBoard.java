@@ -12,7 +12,7 @@ public class CoffeeOrderBoard {
             map.put(0, new ArrayList<>());
             map.get(0).add(new Order(name, 0 ));
         }else {
-            Integer actualNumm = map.lastEntry().getValue().getLast().getNumm() +1;
+            Integer actualNumm = map.lastEntry().getValue().get(0).getNumm() +1;
             map.put(actualNumm, new ArrayList<>());
             map.get(actualNumm).add(new Order(name, actualNumm));
         }
@@ -31,8 +31,8 @@ public class CoffeeOrderBoard {
      public void deliverFirst (){
 
       System.out.println("Ближайший заказ в очереди под номером " +
-              map.firstEntry().getValue().getFirst().getNumm() + " выдан клиету " +
-              map.firstEntry().getValue().getFirst().getName() + " и больше не сущестует");
+              map.firstEntry().getValue().get(0).getNumm() + " выдан клиету " +
+              map.firstEntry().getValue().get(0).getName() + " и больше не сущестует");
 
         map.pollFirstEntry();
 
@@ -42,7 +42,7 @@ public class CoffeeOrderBoard {
         if (map.containsKey(nummOrder)){
 
             System.out.println("Заказ номер " + nummOrder + " выдан клиенту "
-                           +  map.get(nummOrder).getFirst().getName() + "и больше не существует");
+                           +  map.get(nummOrder).get(0).getName() + "и больше не существует");
             map.remove(nummOrder);
 
         }else {
