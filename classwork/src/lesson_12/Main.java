@@ -4,11 +4,15 @@ package lesson_12;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyNumberFormatException  {
+
 
         Fonts fonts = new Fonts();
 
-        String str = "012344444587487445008816789";
+        String str = "01234d4444587487445008816789";
+
+        check(str);
+
 
         char[] chars = str.toCharArray();
 
@@ -44,25 +48,21 @@ public class Main {
 
     }
 
-//    public static boolean check(String el) {
-//
-//        char[] chs = el.toCharArray();
-//
-//        for (int i = 0; i < chs.length; i++) {
-//            try {
-//                int i1 = Integer.parseInt(String.valueOf(chs[i]));
-//                {
-//                    return true;
-//                }
-//            } catch (NumberFormatException e) {
-//                System.out.println("Так себе число.");
-//            }
-//
-//            //Integer.parseInt(String.valueOf(chs[i]))
-//        }
-//        return false;
-//
-//    }
+    public static void  check(String el) throws MyNumberFormatException {
+
+        char[] chs = el.toCharArray();
+
+        for (int v = 0; v < chs.length ;v++) {
+            try {
+
+                int i1 = Integer.parseInt(String.valueOf(chs[v]));
+            } catch (NumberFormatException e) {
+                throw new MyNumberFormatException(chs[v]);
+            }
+
+        }
+
+    }
 
     public static void ptint(String[] string) {
 
