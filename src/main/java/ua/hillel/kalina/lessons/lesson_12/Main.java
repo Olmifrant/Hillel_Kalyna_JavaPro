@@ -1,16 +1,20 @@
 package ua.hillel.kalina.lessons.lesson_12;
 
+import java.util.Arrays;
+
 public class Main {
 
-    public static void main(String[] args) throws  MyNumberFormatException   {
+    public static void main(String[] args) throws MyNumberFormatException   {
 
         Fonts fonts = new Fonts();
 
-        String str = "012344444587487445008816789";
+        String str = args[0];
 
-        check(str);
+        System.out.println(str);
 
-        char[] chars = str.toCharArray();
+        check(str.toString());
+
+        char[] chars = str.toString().toCharArray();
 
         int[] ints = new int[str.length()];
 
@@ -30,7 +34,7 @@ public class Main {
                 case 6:fonts.output(fonts.six()); break;
                 case 7:fonts.output(fonts.seven()); break;
                 case 8:fonts.output(fonts.eight()); break;
-                case 9: fonts.output(fonts.nine()); break;
+                case 9:fonts.output(fonts.nine()); break;
             }
         }
 
@@ -55,11 +59,12 @@ public class Main {
     public static void ptint(String[] string) {
 
         for (int i = 0; i < string.length; i++) {
-            if (i == string.length - 1) {
+            //if (i == string.length - 1) {
                 System.out.println(string[i]);
-            } else {
-                System.out.println(string[i]);
-            }
+//            } else {
+//                System.out.println(string[i]);
+//            }
+
         }
     }
 }
