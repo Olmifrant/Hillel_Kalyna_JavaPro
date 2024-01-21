@@ -4,7 +4,7 @@ class MyNumberFormatException extends CustomException  {
 
     MyNumberFormatException (char st){
 
-        super(String.format("Символ "  + st +  " не является числои"));
+        super(String.format("Символ "  + st +  " не является числом!"));
 
     }
 }

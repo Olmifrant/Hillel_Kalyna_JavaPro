@@ -1,24 +1,27 @@
 package ua.hillel.kalina.lessons.lesson_012;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) throws MyNumberFormatException   {
 
-        Fonts fonts = new Fonts();
 
         String str = args[0];
 
-        System.out.println(str);
+        //String str = "14520369";
 
-        check(str.toString());
+        check(str);
 
-        char[] chars = str.toString().toCharArray();
+        char[] chars = str.toCharArray();
 
         int[] ints = new int[str.length()];
 
         for (int i = 0; i < chars.length; i++) {
             ints[i] = Integer.parseInt(String.valueOf(chars[i]));
         }
+
+        Fonts fonts = new Fonts();
 
         for (int b = 0; b < ints.length; b++) {
 
@@ -57,12 +60,7 @@ public class Main {
     public static void ptint(String[] string) {
 
         for (int i = 0; i < string.length; i++) {
-            //if (i == string.length - 1) {
                 System.out.println(string[i]);
-//            } else {
-//                System.out.println(string[i]);
-//            }
-
         }
     }
 }
