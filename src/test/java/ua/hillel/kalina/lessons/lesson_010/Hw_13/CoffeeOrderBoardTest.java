@@ -148,6 +148,9 @@ class CoffeeOrderBoardTest {
     void draw() {
 
         CoffeeOrderBoard board = new CoffeeOrderBoard();
+        board.add(clients1);
+        board.add(clients2);
+        board.add(clients3);
 
         assertTrue(board.draw());
     }
