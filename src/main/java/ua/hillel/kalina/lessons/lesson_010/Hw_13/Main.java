@@ -1,5 +1,7 @@
 package ua.hillel.kalina.lessons.lesson_010.Hw_13;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +10,7 @@ public class Main {
 
         CoffeeOrderBoard board = new CoffeeOrderBoard();
 
-        int size = 100;
+        int size = 15;
 
         for (int i = 0; i < size; i++) {
 
@@ -107,5 +109,6 @@ public class Main {
         String st = Long.toString(n);
         return n;
     }
+
 
 }

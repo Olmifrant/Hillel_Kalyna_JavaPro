@@ -1,6 +1,12 @@
 package ua.hillel.kalina.lessons.lesson_010.Hw_13;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Order {
+
     private String name;
     private Integer numm;
 
@@ -10,22 +16,9 @@ public class Order {
         this.numm = numm;
     }
 
-    public String getName() {
-        return name;
-    }
+    public Order() {
 
-    public void setName(String name) {
-        this.name = name;
     }
-
-    public Integer getNumm() {
-        return numm;
-    }
-
-    public void setNumm(Integer numm) {
-        this.numm = numm;
-    }
-
 }
 
 

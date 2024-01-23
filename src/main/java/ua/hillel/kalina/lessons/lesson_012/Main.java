@@ -1,15 +1,14 @@
 package ua.hillel.kalina.lessons.lesson_012;
 
-import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) throws MyNumberFormatException   {
 
 
-        String str = args[0];
+        //String str = args[0];
 
-        //String str = "14520369";
+        String str = "314158261";
 
         check(str);
 

@@ -10,7 +10,6 @@ class OrderTest {
     String clients1 = "Oleg";
 
 
-
     @Test
     @DisplayName("getName")
     void getName() {

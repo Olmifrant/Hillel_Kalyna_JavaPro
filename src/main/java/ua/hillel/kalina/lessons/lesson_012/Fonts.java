@@ -2,8 +2,6 @@ package ua.hillel.kalina.lessons.lesson_012;
 
 public class Fonts {
 
-
-
     static int sise = 0;
     String[] rezult = new String[sise];
 
