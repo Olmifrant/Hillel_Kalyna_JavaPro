@@ -17,6 +17,7 @@ class CoffeeOrderBoardTest {
     void addValidClientsOleg() {
         CoffeeOrderBoard board = new CoffeeOrderBoard();
 
+        assertEquals(0, board.map.size());
         board.add(clients1);
         assertEquals(1, board.map.size());
         assertEquals(clients1, board.map.lastEntry().getValue().get(0).getName());
@@ -27,8 +28,10 @@ class CoffeeOrderBoardTest {
     @Test
     @DisplayName("addSomeClients")
     void addSomeClients() {
+
         CoffeeOrderBoard board = new CoffeeOrderBoard();
 
+        assertEquals(0, board.map.size());
         board.add(clients1);
         assertEquals(1, board.map.size());
         assertEquals(clients1, board.map.lastEntry().getValue().get(0).getName());
@@ -47,6 +50,7 @@ class CoffeeOrderBoardTest {
 
         CoffeeOrderBoard board = new CoffeeOrderBoard();
 
+        assertEquals(0, board.map.size());
         board.add(clients1);
         board.add(clients2);
         board.deliverySome(0);
@@ -95,6 +99,8 @@ class CoffeeOrderBoardTest {
     void deliverFirstHaveSomeClients() {
 
         CoffeeOrderBoard board = new CoffeeOrderBoard();
+
+        assertEquals(0, board.map.size());
         board.add(clients1);
         assertEquals(0,board.map.lastEntry().getValue().get(0).getNumm());
         assertEquals(clients1,board.map.lastEntry().getValue().get(0).getName());
@@ -122,6 +128,8 @@ class CoffeeOrderBoardTest {
     void deliverySome() {
 
         CoffeeOrderBoard board = new CoffeeOrderBoard();
+
+        assertEquals(0, board.map.size());
         board.add(clients1);
         board.add(clients2);
         board.add(clients3);
@@ -148,6 +156,8 @@ class CoffeeOrderBoardTest {
     void draw() {
 
         CoffeeOrderBoard board = new CoffeeOrderBoard();
+
+        assertEquals(0, board.map.size());
         board.add(clients1);
         board.add(clients2);
         board.add(clients3);
