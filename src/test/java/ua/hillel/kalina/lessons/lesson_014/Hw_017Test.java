@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Hw_017Test {
 
-
     @Test
     @DisplayName("Среднее арифметическое")
     void averageSum() {
@@ -46,7 +45,19 @@ class Hw_017Test {
     }
 
 
+    @Test
+    @DisplayName("uppCaseAndLowCase")
+    void toUpperCase() {
 
+        Hw_017 hw = new Hw_017();
 
+        List list1 = List.of("one","two","three","four","five","six","seven","eight","nine");
+        List expect = List.of("one=ONE, two=TWO, three=THREE, four=FOUR, five=FIVE, six=SIX, seven=SEVEN, eight=EIGHT, nine=NINE");
 
+        assertEquals(expect.toString(), hw.toUpperCase(list1).toString());
+        assertThrows(NullPointerException.class, () -> hw.toUpperCase(null));
+
+        System.out.println("uppCaseAndLowCase PASS");
+
+    }
 }
