@@ -26,8 +26,8 @@ class Hw_017Test {
     @DisplayName("Слова без больших букв и с длиной 4 символа")
     void filterText() {
 
-        List list = List.of("дома, сама, стал, либо, либо, хоть, меня, тому, моих, моем, себя, тебя");
-        List lis = List.of("дома, сама, стал, либо, хоть, меня, тому, моих, моем, себя, тебя");
+        List list = List.of("дома", "сама", "стал", "либо", "либо", "хоть", "меня", "тому", "моих", "моем", "себя", "тебя");
+        List lis = List.of("дома", "сама", "стал", "либо", "хоть", "меня", "тому", "моих", "моем", "себя", "тебя");
 
         String string = "Утром, когда я проснулся, Флоры дома уже не было. Никакой записки она не оставила. Горничная подала мне завтрак на кухне, а сама отправилась по своим делам. " +
                 "Я не стал расспрашивать ее ни о чем, поскольку она либо действительно ничего не знала, либо не имела права сказать мне хоть что-то из того, что меня интересовало. " +
@@ -52,7 +52,7 @@ class Hw_017Test {
         Hw_017 hw = new Hw_017();
 
         List list1 = List.of("one","two","three","four","five","six","seven","eight","nine");
-        List expect = List.of("one=ONE, two=TWO, three=THREE, four=FOUR, five=FIVE, six=SIX, seven=SEVEN, eight=EIGHT, nine=NINE");
+        List expect = List.of("one=ONE", "two=TWO", "three=THREE", "four=FOUR", "five=FIVE", "six=SIX", "seven=SEVEN", "eight=EIGHT", "nine=NINE");
 
         assertEquals(expect.toString(), hw.toUpperCase(list1).toString());
         assertThrows(NullPointerException.class, () -> hw.toUpperCase(null));
