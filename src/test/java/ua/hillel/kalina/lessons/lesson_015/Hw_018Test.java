@@ -3,14 +3,10 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
 class Hw_018Test {
-
-
-
 
 
 
@@ -63,7 +59,6 @@ class Hw_018Test {
     }
 
 
-
     @Test
     void getCheapestBook() {
 
@@ -71,7 +66,6 @@ class Hw_018Test {
 
         assertEquals(1, cheapestBooks.size());
         assertEquals(9, cheapestBooks.get(0).getId());
-
     }
 
     @Test
@@ -83,8 +77,6 @@ class Hw_018Test {
         assertEquals(15, lastThreeAddedProducts.get(0).getId());
         assertEquals(12, lastThreeAddedProducts.get(1).getId());
         assertEquals(13, lastThreeAddedProducts.get(2).getId());
-
-
     }
 
     @Test
@@ -94,13 +86,11 @@ class Hw_018Test {
 
         assertEquals(95, totalBookCost);
         assertNotEquals(5, totalBookCost);
-
     }
 
 
     @Test
     void groupProductsByType() {
-
 
         Map<String, List<Product>> groupedProducts = Hw_018.groupProductsByType(base());
 
@@ -117,7 +107,6 @@ class Hw_018Test {
         assertEquals(3, groupedProducts.get("TV").size());
         assertEquals(2, groupedProducts.get("Handy").size());
         assertThrows(NullPointerException.class, ()->groupedProducts.get("tgtg").size());
-
 
     }
 }
