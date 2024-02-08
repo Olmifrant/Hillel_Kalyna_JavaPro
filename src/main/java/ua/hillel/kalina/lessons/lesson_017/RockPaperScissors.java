@@ -92,6 +92,7 @@ public class RockPaperScissors {
         System.out.println("Всего игр: " + gamesPlayed);
         System.out.println("Побед " + playerName + ": " + playerWins);
         System.out.println("Побед системы: " + computerWins);
+        System.out.println("В ничью: " + (totalGames - playerWins - computerWins));
     }
 
     private static String getChoiceName(int choice) {
