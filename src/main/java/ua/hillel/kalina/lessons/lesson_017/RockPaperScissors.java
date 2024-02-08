@@ -40,8 +40,8 @@ public class RockPaperScissors {
         while (gamesPlayed < totalGames) {
 
             System.out.println();
-            System.out.println(STR."Game \{gamesPlayed + 1}/\{totalGames}");
-            System.out.println(STR."\{playerName} сделайте ваш выбор: 1 - Камень, 2 - Ножницы, 3 - Бумага, 0 - завершить игру");
+            System.out.println("Игра: " + gamesPlayed + 1 + "/" + totalGames);
+            System.out.println(playerName+ " сделайте ваш выбор: 1 - Камень, 2 - Ножницы, 3 - Бумага, 0 - завершить игру");
 
 
             Scanner scan = new Scanner(System.in);
@@ -68,8 +68,8 @@ public class RockPaperScissors {
                 Random random = new Random();
                 int computerChoice = random.nextInt(3) + 1;
 
-                System.out.println(STR."Выбор \{playerName}: \{getChoiceName(playerChoice)}");
-                System.out.println(STR."Выбор компьютера: \{getChoiceName(computerChoice)}");
+                System.out.println("Выбор " + playerName + ": " + getChoiceName(playerChoice));
+                System.out.println("Выбор компьютера: " + getChoiceName(computerChoice));
 
                 int result = determineWinner(playerChoice, computerChoice);
                 if (result == 1) {
@@ -89,9 +89,9 @@ public class RockPaperScissors {
 
 
         System.out.println("\nИгра окончена.");
-        System.out.println(STR."Сыграно игр: \{gamesPlayed}");
-        System.out.println(STR."Побед: \{playerWins}");
-        System.out.println(STR."Поражений: \{computerWins}");
+        System.out.println("Сыграно игр: " + gamesPlayed);
+        System.out.println("Побед: " + playerWins);
+        System.out.println("Поражений: " + computerWins);
 
     }
 
