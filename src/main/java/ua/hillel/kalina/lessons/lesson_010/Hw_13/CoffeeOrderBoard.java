@@ -2,7 +2,6 @@ package ua.hillel.kalina.lessons.lesson_010.Hw_13;
 
 import java.util.*;
 
-
 public class CoffeeOrderBoard {
 
     NavigableMap <Integer,List<Order>> map = new TreeMap<>();

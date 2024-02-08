@@ -19,7 +19,7 @@ public class Hw_017 {
                 .map(String::strip).filter(w -> w.equals(w.toLowerCase()) && w.length() == 4
                         && !w.contains(",") && !w.contains(".")).toList();
 
-        //System.out.println(list);
+        System.out.println(list);
 
         return list;
     }

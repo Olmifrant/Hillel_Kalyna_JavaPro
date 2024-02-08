@@ -129,6 +129,7 @@ class CoffeeOrderBoardTest {
 
         CoffeeOrderBoard board = new CoffeeOrderBoard();
 
+
         assertEquals(0, board.map.size());
         board.add(clients1);
         board.add(clients2);

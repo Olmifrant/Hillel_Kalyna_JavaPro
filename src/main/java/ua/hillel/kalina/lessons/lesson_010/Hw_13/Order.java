@@ -16,10 +16,4 @@ public class Order {
         this.numm = numm;
     }
 
-    public Order() {
-
-    }
 }
-
-
-
