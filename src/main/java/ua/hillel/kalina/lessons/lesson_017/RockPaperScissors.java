@@ -1,12 +1,14 @@
 package ua.hillel.kalina.lessons.lesson_017;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import javax.sound.sampled.*;
 
 public class RockPaperScissors {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
 
         System.out.println("Добро пожаловать в игру Камень, Ножницы, Бугага!");
         System.out.println("Введите ваше имя: ");
@@ -41,7 +43,7 @@ public class RockPaperScissors {
 
             System.out.println();
             System.out.println("Игра: " + (gamesPlayed + 1) + "/" + totalGames);
-            System.out.println(playerName+ " сделайте ваш выбор: 1 - Камень, 2 - Ножницы, 3 - Бумага, 0 - завершить игру");
+            System.out.println(playerName + " сделайте ваш выбор: 1 - Камень, 2 - Ножницы, 3 - Бумага, 0 - завершить игру");
 
 
             Scanner scan = new Scanner(System.in);
@@ -62,6 +64,7 @@ public class RockPaperScissors {
             }
 
             if (playerChoice == 0) {
+                sound(3);
                 break;
             } else {
 
@@ -73,12 +76,15 @@ public class RockPaperScissors {
 
                 int result = determineWinner(playerChoice, computerChoice);
                 if (result == 1) {
-                    System.out.println("Побеждает " + playerName );
+                    sound(1);
+                    System.out.println("Побеждает " + playerName);
                     playerWins++;
                 } else if (result == -1) {
+                    sound(2);
                     System.out.println("Побеждает система");
                     computerWins++;
                 } else {
+                    sound(0);
                     System.out.println("Ничья!");
                 }
 
@@ -86,7 +92,6 @@ public class RockPaperScissors {
             }
 
         }
-
 
         System.out.println("\nИгра окончена.");
         System.out.println("Всего игр: " + gamesPlayed);
@@ -96,12 +101,12 @@ public class RockPaperScissors {
     }
 
     private static String getChoiceName(int choice) {
-        switch (choice) {
-            case 1:return "Камень";
-            case 2:return "Ножницы";
-            case 3:return "Бумага";
-            default:return "";
-        }
+        return switch (choice) {
+            case 1 -> "Камень";
+            case 2 -> "Ножницы";
+            case 3 -> "Бумага";
+            default -> "";
+        };
     }
 
     static int determineWinner(int playerChoice, int computerChoice) {
@@ -116,4 +121,34 @@ public class RockPaperScissors {
         }
     }
 
+    public static void sound(int play){
+
+        switch (play){
+            case 0:play("src/main/resources/RPS/break.wav"); break;
+            case 1:play("src/main/resources/RPS/win.wav"); break;
+            case 2:play("src/main/resources/RPS/lose.wav"); break;
+            case 3:play("src/main/resources/RPS/over.wav"); break;
+        }
+    }
+
+    public static void play(String filePath) {
+
+        try {
+            File file = new File(filePath);
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
+
+
+
+
+
+
