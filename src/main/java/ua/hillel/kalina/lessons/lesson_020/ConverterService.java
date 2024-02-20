@@ -1,36 +1,20 @@
 package ua.hillel.kalina.lessons.lesson_020;
-
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.yaml.snakeyaml.Yaml;
 import java.io.*;
-import java.net.URISyntaxException;
-import java.nio.file.*;
-import java.security.CodeSource;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class JsonYamlConverter {
+public class ConverterService {
 
-    private static final ObjectMapper jsonMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
+
     private static final Yaml yaml = new Yaml();
 
-    public static void main(String[] args) throws URISyntaxException {
-
-        CodeSource codeSource = ua.hillel.kalina.lessons.lesson_020.JsonYamlConverter.class.getProtectionDomain().getCodeSource();
-        File jarFile = new File(codeSource.getLocation().toURI().getPath());
-        String jarDir = jarFile.getParentFile().getPath();
-
-        String[] str = args;
-
-        String path;
-        if (str.length == 0){
-            path = jarDir;
-            //path = "src/main/java/ua/hillel/kalina/lessons/lesson_021/resourse";
-        }else {
-            path = String.valueOf(str[0]);
-        }
-
-        convertFiles(path, path + "/Converted");
-    }
 
     public static void convertFiles(String inputDir, String outputDir) {
         try {
@@ -76,24 +60,63 @@ public class JsonYamlConverter {
     }
 
     private static void convertJsonToYaml(File jsonFile, File yamlFile) throws IOException {
-        Object json = jsonMapper.readValue(jsonFile, Object.class);
-        try (Writer writer = new FileWriter(yamlFile)) {
-            yaml.dump(json, writer);
+        try (FileInputStream inputStream = new FileInputStream(jsonFile);
+             FileWriter writer = new FileWriter(yamlFile)) {
+            JsonNode jsonNode = objectMapper.readTree(inputStream);
+
+            if (jsonNode.isArray()) {
+                Iterator<JsonNode> iterator = jsonNode.elements();
+                while (iterator.hasNext()) {
+                    JsonNode element = iterator.next();
+                    String yamlString = objectMapper.writeValueAsString(element);
+                    writer.write("- " + yamlString + "\n");
+                }
+            } else {
+                String yamlString = objectMapper.writeValueAsString(jsonNode);
+                writer.write("- " + yamlString + "\n");
+            }
         }
     }
 
     private static void convertYamlToJson(File yamlFile, File jsonFile) throws IOException {
-        try (InputStream inputStream = new FileInputStream(yamlFile);
-             OutputStream outputStream = new FileOutputStream(jsonFile)) {
-            Iterable<Object> yamlObjects = yaml.loadAll(inputStream);
-            jsonMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-            for (Object yamlObject : yamlObjects) {
-                String jsonString = jsonMapper.writeValueAsString(yamlObject);
-                outputStream.write(jsonString.getBytes());
-                outputStream.write('\n');
+        List<Object> yamlObjects = readYamlObjects(yamlFile);
+        List<String> jsonObjects = new ArrayList<>();
+
+        for (Object yamlObj : yamlObjects) {
+            String jsonObject = objectMapper.writeValueAsString(yamlObj);
+            jsonObjects.add(jsonObject);
+        }
+
+        try (PrintWriter writer = new PrintWriter(jsonFile)) {
+            writer.println("[");
+            for (int i = 0; i < jsonObjects.size(); i++) {
+                writer.print(jsonObjects.get(i));
+                if (i < jsonObjects.size() - 1) {
+                    writer.println(",");
+                }
             }
+            writer.println("\n]");
         }
     }
+
+    private static List<Object> readYamlObjects(File yamlFile) throws IOException {
+        List<Object> objects = new ArrayList<>();
+        try (InputStream inputStream = new FileInputStream(yamlFile)) {
+            Iterable<Object> yamlDocuments = yaml.loadAll(inputStream);
+            for (Object document : yamlDocuments) {
+                if (document instanceof Iterable) {
+                    Iterator<?> iterator = ((Iterable<?>) document).iterator();
+                    while (iterator.hasNext()) {
+                        objects.add(iterator.next());
+                    }
+                } else {
+                    objects.add(document);
+                }
+            }
+        }
+        return objects;
+    }
+
 
     private static String getFileExtension(String fileName) {
         return fileName.substring(fileName.lastIndexOf('.') + 1);
