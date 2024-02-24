@@ -6,6 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        //Тестовый коммит)))
+
         File logFile = new File("src/main/java/ua/hillel/kalina/lessons/lesson_019/logFile.txt");
 
             int var = (int) (Math.random() * 2 + 1);
