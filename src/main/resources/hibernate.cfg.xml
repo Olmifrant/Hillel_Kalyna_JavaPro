@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Настройки подключения к базе данных -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hillel</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">43046721</property>
+
+        <!-- Настройки Hibernate -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Маппинг сущностей -->
+        <mapping class="ua.hillel.kalina.lessons.lesson_031.Student"/>
+        <!-- Добавьте сюда другие маппинги, если они есть -->
+    </session-factory>
+</hibernate-configuration>
