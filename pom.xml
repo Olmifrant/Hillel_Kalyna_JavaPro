@@ -8,22 +8,32 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.versions>5.10.1</junit.versions>
+        <junit.version>5.10.1</junit.version>
         <lombok.version>1.18.30</lombok.version>
         <mockito.version>5.9.0</mockito.version>
-        <sparkjava.version>2.9.3</sparkjava.version>
-        <gson.version>2.8.8</gson.version>
-        <jackson.version>2.13.0</jackson.version>
-        <jackson.core.version>2.12.5</jackson.core.version>
-        <jackson.databind.version>2.12.5</jackson.databind.version>
+        <sparkjava.version>2.9.4</sparkjava.version>
+        <gson.version>2.9.0</gson.version>
+        <jackson.version>2.12.5</jackson.version>
         <jackson.dataformat.yaml.version>2.15.2</jackson.dataformat.yaml.version>
         <spring.version>6.1.5</spring.version>
-        <logback.version>1.2.6</logback.version>
         <mysql.version>8.0.33</mysql.version>
+        <spring-modulith.version>1.1.4</spring-modulith.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.modulith</groupId>
+                <artifactId>spring-modulith-bom</artifactId>
+                <version>${spring-modulith.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -35,13 +45,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.versions}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.versions}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -51,19 +61,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.xbean</groupId>
-            <artifactId>xbean-reflect</artifactId>
-            <version>3.7</version>
-        </dependency>
-        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>${jackson.core.version}</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.databind.version}</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
@@ -93,7 +98,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
+            <version>1.5.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -106,12 +111,26 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.3.11.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -138,7 +157,6 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.0.1.Final</version>
         </dependency>
-
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
@@ -156,6 +174,13 @@
             <version>2.3.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.1.0-alpha1</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -164,11 +189,46 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>ua.hillel.kalina.lessons.lesson_036.MainApplication</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -1,46 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <contextName>myContext</contextName>
 
-    <!-- Общая настройка для всех аппендеров -->
-    <property name="LOG_FOLDER" value="logs"/>
+    <!-- Loggers -->
+    <logger name="org.springframework" level="INFO" />
 
-    <timestamp key="byDay" datePattern="yyyy-MM-dd"/>
-    <timestamp key="byHour" datePattern="yyyy-MM-dd-HH"/>
-
-    <!-- Аппендер для записи результатов -->
-    <appender name="delivery" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_FOLDER}/result.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_FOLDER}/result-%d{yyyy-MM-dd}.%d{HH-mm-ss-SSS}.log</fileNamePattern>
-            <maxHistory>7</maxHistory> <!-- Хранить логи за последние 7 дней -->
-            <totalSizeCap>1GB</totalSizeCap> <!-- Максимальный размер всех логов -->
-        </rollingPolicy>
+    <!-- Appenders -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d [%-5level] [%-14.14thread] - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Аппендер для логирования добавления заказов -->
-    <appender name="addOrder" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_FOLDER}/addOrder.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_FOLDER}/addOrder-%d{yyyy-MM-dd}.%d{HH-mm-ss-SSS}.log</fileNamePattern>
-            <maxHistory>7</maxHistory>
-            <totalSizeCap>1GB</totalSizeCap>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%d [%-5level] [%-14.14thread] - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <!-- Настройка логгеров -->
-    <logger name="delivery" level="INFO" additivity="false">
-        <appender-ref ref="delivery"/>
-    </logger>
-
-    <logger name="addOrder" level="INFO" additivity="false">
-        <appender-ref ref="addOrder"/>
-    </logger>
-
+    <!-- Logger Configuration -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
 </configuration>
